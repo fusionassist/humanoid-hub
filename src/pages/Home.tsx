@@ -203,7 +203,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Humanoids.ie?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose FusionHumanoids.com?</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               As Ireland's dedicated robotics partner, we provide end-to-end support from consultation to deployment.
             </p>

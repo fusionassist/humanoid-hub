@@ -18,7 +18,7 @@ export default function Privacy() {
               <section>
                 <h2 className="text-2xl font-semibold mb-4">1. Introduction</h2>
                 <p className="text-muted-foreground mb-4">
-                  Humanoids.ie, operated by Fusion Technologies ("we", "us", or "our"), is committed 
+                  FusionHumanoids.com, operated by Fusion Technologies ("we", "us", or "our"), is committed 
                   to protecting your privacy. This Privacy Policy explains how we collect, use, 
                   disclose, and safeguard your information when you visit our website or use our services.
                 </p>
@@ -76,8 +76,8 @@ export default function Privacy() {
                   For any privacy-related questions or to exercise your rights, please contact us at:
                 </p>
                 <p className="text-muted-foreground mt-2">
-                  Email: privacy@humanoids.ie<br />
-                  Address: Dublin, Ireland
+                  Email: privacy@fusionhumanoids.com<br />
+                  Address: Dromone, Oldcastle, Co Meath A82E0W4, Ireland
                 </p>
               </section>
             </div>

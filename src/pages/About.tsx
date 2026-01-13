@@ -46,7 +46,7 @@ export default function About() {
             className="max-w-3xl"
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              About Humanoids.ie
+              About FusionHumanoids.com
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
               Ireland's premier destination for advanced robotics technology. 
@@ -67,7 +67,7 @@ export default function About() {
             >
               <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                At Humanoids.ie, we believe that advanced robotics should be accessible to every 
+                At FusionHumanoids.com, we believe that advanced robotics should be accessible to every 
                 organization in Ireland. Whether you're a research institution exploring the frontiers 
                 of AI, a manufacturer looking to automate operations, or an enterprise seeking innovative 
                 solutions, we're here to help.
@@ -120,7 +120,7 @@ export default function About() {
           >
             <h2 className="text-3xl font-bold mb-4">Our Values</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              The principles that guide everything we do at Humanoids.ie.
+              The principles that guide everything we do at FusionHumanoids.com.
             </p>
           </motion.div>
 
@@ -157,14 +157,14 @@ export default function About() {
             <div className="p-8 md:p-12 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/5 border border-primary/20">
               <h2 className="text-3xl font-bold mb-6">Part of Fusion Technologies</h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Humanoids.ie operates as a division of Fusion Technologies (FusionTechnologies.ie), 
+                FusionHumanoids.com operates as a division of Fusion Technologies (FusionTechnologies.ie), 
                 a leading Irish technology company specializing in advanced solutions for businesses. 
                 This partnership enables us to leverage extensive technical expertise, established 
                 supplier relationships, and robust support infrastructure.
               </p>
               <p className="text-muted-foreground mb-8 leading-relaxed">
                 Fusion Technologies provides the backbone for our operations, including logistics, 
-                customer service, technical support, and compliance management. This allows Humanoids.ie 
+                customer service, technical support, and compliance management. This allows FusionHumanoids.com 
                 to focus on what we do best: bringing world-class robotics to Ireland.
               </p>
               <a 

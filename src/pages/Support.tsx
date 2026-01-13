@@ -198,10 +198,10 @@ export default function Support() {
                     <ArrowRight className="w-4 h-4" />
                   </Button>
                 </Link>
-                <a href="tel:+35312345678">
+                <a href="tel:+353449672855">
                   <Button variant="outline" size="lg">
                     <Phone className="w-4 h-4" />
-                    +353 1 234 5678
+                    +353 44 967 2855
                   </Button>
                 </a>
               </div>
