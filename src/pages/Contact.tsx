@@ -13,19 +13,19 @@ const contactInfo = [
   {
     icon: MapPin,
     title: 'Address',
-    content: 'Dublin, Ireland',
+    content: 'Dromone, Oldcastle, Co Meath A82E0W4, Ireland',
     subtext: 'By appointment only',
   },
   {
     icon: Mail,
     title: 'Email',
-    content: 'info@humanoids.ie',
+    content: 'sales@fusionhumanoids.com',
     subtext: 'We respond within 24 hours',
   },
   {
     icon: Phone,
     title: 'Phone',
-    content: '+353 1 234 5678',
+    content: '+353 44 967 2855',
     subtext: 'Mon-Fri, 9am-6pm',
   },
   {
