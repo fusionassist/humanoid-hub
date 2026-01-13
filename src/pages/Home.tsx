@@ -17,7 +17,7 @@ const features = [
   {
     icon: Truck,
     title: 'Irish Delivery',
-    description: 'Fast, insured delivery across Ireland with white-glove service available.',
+    description: 'Fast, insured delivery across Ireland & UK with white-glove service available.',
   },
   {
     icon: Headphones,
@@ -80,7 +80,7 @@ export default function Home() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-8"
             >
               <Zap className="w-4 h-4" />
-              Ireland's Premier Robotics Partner
+              Ireland & UK's Premier Robotics Partner
             </motion.div>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
@@ -89,8 +89,8 @@ export default function Home() {
             </h1>
 
             <p className="text-xl text-muted-foreground mb-10 max-w-2xl leading-relaxed">
-              Ireland's exclusive destination for world-class humanoid robots and robot dogs. 
-              Bringing Unitree's cutting-edge technology to Irish businesses and institutions.
+              Ireland & UK's exclusive destination for world-class humanoid robots and robot dogs. 
+              Bringing Unitree's cutting-edge technology to businesses and institutions across Ireland & UK.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -205,7 +205,7 @@ export default function Home() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose FusionHumanoids.com?</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              As Ireland's dedicated robotics partner, we provide end-to-end support from consultation to deployment.
+              As Ireland & UK's dedicated robotics partner, we provide end-to-end support from consultation to deployment.
             </p>
           </motion.div>
 

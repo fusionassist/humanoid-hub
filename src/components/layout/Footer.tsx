@@ -40,8 +40,8 @@ export function Footer() {
               </div>
             </Link>
             <p className="text-muted-foreground mb-6 max-w-sm">
-              Ireland's premier destination for advanced humanoid robots and robotic solutions. 
-              Bringing cutting-edge robotics to businesses across Ireland.
+              Ireland & UK's premier destination for advanced humanoid robots and robotic solutions. 
+              Bringing cutting-edge robotics to businesses across Ireland & UK.
             </p>
             <div className="space-y-3 text-sm text-muted-foreground">
               <div className="flex items-center gap-3">
@@ -153,7 +153,7 @@ export function Footer() {
       <div className="border-t border-border bg-secondary/30 py-4">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs text-center text-muted-foreground">
-            All prices displayed are exclusive of VAT (23% applies for Ireland). 
+            All prices displayed are exclusive of VAT (23% applies for Ireland, 20% for UK). 
             Pricing and availability may vary by region. Contact us for a customized quote.
           </p>
         </div>

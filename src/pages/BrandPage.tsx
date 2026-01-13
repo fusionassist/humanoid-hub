@@ -144,7 +144,7 @@ export default function BrandPage() {
             </h2>
             <p className="text-muted-foreground mb-8">
               As an official partner, we provide full sales support, warranty coverage, 
-              and technical assistance for all {manufacturer.name} products in Ireland.
+              and technical assistance for all {manufacturer.name} products in Ireland & UK.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link to="/contact">
