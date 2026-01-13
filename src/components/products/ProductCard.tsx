@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Zap } from 'lucide-react';
 import { Product } from '@/types';
 import { getManufacturerById } from '@/data/manufacturers';
+import { getProductImage } from '@/data/productImages';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 
@@ -20,6 +21,7 @@ const availabilityConfig = {
 export function ProductCard({ product, index = 0 }: ProductCardProps) {
   const manufacturer = getManufacturerById(product.manufacturerId);
   const availability = availabilityConfig[product.availability];
+  const productImage = getProductImage(product.id);
 
   return (
     <motion.div
@@ -36,9 +38,17 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
           {/* Image */}
           <div className="relative aspect-[4/3] bg-gradient-to-br from-secondary to-muted overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <Zap className="w-16 h-16 text-muted-foreground/20" />
-            </div>
+            {productImage ? (
+              <img 
+                src={productImage} 
+                alt={product.name}
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            ) : (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <Zap className="w-16 h-16 text-muted-foreground/20" />
+              </div>
+            )}
             {/* Availability Badge */}
             <div className="absolute top-4 left-4">
               <Badge className={cn("border", availability.className)}>

@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import fusionLogo from '@/assets/fusion-logo.png';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -40,13 +41,11 @@ export function Header() {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xl">H</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-lg leading-tight">Humanoids.ie</span>
-              <span className="text-xs text-muted-foreground">by Fusion Technologies</span>
-            </div>
+            <img 
+              src={fusionLogo} 
+              alt="Humanoids.ie" 
+              className="h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
