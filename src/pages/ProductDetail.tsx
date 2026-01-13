@@ -174,7 +174,7 @@ export default function ProductDetail() {
                 </Link>
               )}
 
-              <h1 className="text-4xl lg:text-5xl font-bold mb-4">{product.name}</h1>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">{product.name}</h1>
               
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
                 {product.shortDescription}
@@ -219,23 +219,23 @@ export default function ProductDetail() {
       <section className="py-12 bg-card">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Tabs defaultValue="overview" className="w-full">
-            <TabsList className="w-full justify-start border-b border-border rounded-none bg-transparent h-auto p-0 mb-8">
+            <TabsList className="w-full justify-start border-b border-border rounded-none bg-transparent h-auto p-0 mb-8 overflow-x-auto flex-nowrap scrollbar-hide">
               <TabsTrigger 
                 value="overview"
-                className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary px-6 py-4"
+                className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base whitespace-nowrap flex-shrink-0"
               >
                 Overview
               </TabsTrigger>
               <TabsTrigger 
                 value="specs"
-                className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary px-6 py-4"
+                className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base whitespace-nowrap flex-shrink-0"
               >
                 Specifications
               </TabsTrigger>
               {allImages.length > 1 && (
                 <TabsTrigger 
                   value="gallery"
-                  className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary px-6 py-4"
+                  className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base whitespace-nowrap flex-shrink-0"
                 >
                   Gallery ({allImages.length})
                 </TabsTrigger>
@@ -243,14 +243,14 @@ export default function ProductDetail() {
               {product.media.length > 0 && (
                 <TabsTrigger 
                   value="videos"
-                  className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary px-6 py-4"
+                  className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base whitespace-nowrap flex-shrink-0"
                 >
                   Videos
                 </TabsTrigger>
               )}
               <TabsTrigger 
                 value="downloads"
-                className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary px-6 py-4"
+                className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base whitespace-nowrap flex-shrink-0"
               >
                 Downloads
               </TabsTrigger>
