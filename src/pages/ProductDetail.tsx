@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Download, ExternalLink, Check, Zap, MessageSquare } from 'lucide-react';
+import { ArrowLeft, Download, ExternalLink, Check, Zap, MessageSquare, Play } from 'lucide-react';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -8,6 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { QuoteForm } from '@/components/forms/QuoteForm';
 import { getProductBySlug } from '@/data/products';
 import { getManufacturerById } from '@/data/manufacturers';
+import { getProductImage } from '@/data/productImages';
 import { cn } from '@/lib/utils';
 
 const availabilityConfig = {
@@ -28,6 +29,7 @@ export default function ProductDetail() {
   const { slug } = useParams<{ slug: string }>();
   const product = getProductBySlug(slug || '');
   const manufacturer = product ? getManufacturerById(product.manufacturerId) : null;
+  const productImage = product ? getProductImage(product.id) : null;
 
   if (!product) {
     return (
@@ -70,9 +72,17 @@ export default function ProductDetail() {
               animate={{ opacity: 1, x: 0 }}
               className="relative aspect-square rounded-2xl bg-gradient-to-br from-secondary to-muted overflow-hidden"
             >
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Zap className="w-32 h-32 text-muted-foreground/20" />
-              </div>
+              {productImage ? (
+                <img 
+                  src={productImage} 
+                  alt={product.name}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Zap className="w-32 h-32 text-muted-foreground/20" />
+                </div>
+              )}
               <div className="absolute top-6 left-6 flex flex-col gap-2">
                 <Badge className={cn("border text-sm px-3 py-1", availability.className)}>
                   {availability.label}
@@ -156,6 +166,14 @@ export default function ProductDetail() {
               >
                 Specifications
               </TabsTrigger>
+              {product.media.length > 0 && (
+                <TabsTrigger 
+                  value="videos"
+                  className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary px-6 py-4"
+                >
+                  Videos
+                </TabsTrigger>
+              )}
               <TabsTrigger 
                 value="downloads"
                 className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary px-6 py-4"
@@ -219,6 +237,35 @@ export default function ProductDetail() {
                 ))}
               </div>
             </TabsContent>
+
+            {product.media.length > 0 && (
+              <TabsContent value="videos" className="mt-0">
+                <h2 className="text-2xl font-bold mb-6">Product Videos</h2>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {product.media.map((videoUrl, i) => (
+                    <div key={i} className="rounded-xl overflow-hidden bg-secondary/50 border border-border">
+                      <video
+                        src={videoUrl}
+                        controls
+                        className="w-full aspect-video object-cover"
+                        poster=""
+                      >
+                        Your browser does not support the video tag.
+                      </video>
+                      <div className="p-4">
+                        <div className="flex items-center gap-2">
+                          <Play className="w-4 h-4 text-primary" />
+                          <span className="text-sm font-medium">Demo Video {i + 1}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-sm text-muted-foreground mt-6">
+                  * Videos sourced from official Unitree product pages.
+                </p>
+              </TabsContent>
+            )}
 
             <TabsContent value="downloads" className="mt-0">
               <h2 className="text-2xl font-bold mb-6">Downloads & Resources</h2>
