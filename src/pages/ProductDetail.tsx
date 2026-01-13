@@ -119,7 +119,7 @@ export default function ProductDetail() {
                 <p className="text-sm text-muted-foreground mb-2">Price</p>
                 <p className="text-2xl font-bold mb-1">Request a Quote</p>
                 <p className="text-xs text-muted-foreground">
-                  All prices exclusive of VAT (23% Ireland). Contact us for enterprise pricing.
+                  All prices exclusive of VAT (23% Ireland, 20% UK). Contact us for enterprise pricing.
                 </p>
               </div>
 

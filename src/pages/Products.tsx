@@ -79,7 +79,7 @@ export default function Products() {
               Product Catalog
             </h1>
             <p className="text-xl text-muted-foreground">
-              Explore our full range of humanoid robots and robotic solutions available in Ireland.
+              Explore our full range of humanoid robots and robotic solutions available in Ireland & UK.
             </p>
           </motion.div>
         </div>

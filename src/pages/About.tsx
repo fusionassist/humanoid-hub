@@ -8,7 +8,7 @@ const values = [
   {
     icon: Target,
     title: 'Innovation First',
-    description: 'We partner with the world\'s most innovative robotics companies to bring cutting-edge technology to Ireland.',
+    description: 'We partner with the world\'s most innovative robotics companies to bring cutting-edge technology to Ireland & UK.',
   },
   {
     icon: Users,
@@ -29,9 +29,9 @@ const values = [
 
 const milestones = [
   { year: '2024', event: 'Founded as part of Fusion Technologies' },
-  { year: '2024', event: 'Official Unitree Robotics partnership for Ireland' },
+  { year: '2024', event: 'Official Unitree Robotics partnership for Ireland & UK' },
   { year: '2025', event: 'Expanded product range and service capabilities' },
-  { year: 'Future', event: 'UK and EU market expansion planned' },
+  { year: 'Future', event: 'EU market expansion planned' },
 ];
 
 export default function About() {
@@ -49,8 +49,8 @@ export default function About() {
               About FusionHumanoids.com
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Ireland's premier destination for advanced robotics technology. 
-              We're on a mission to bring the future of automation to Irish businesses and institutions.
+              Ireland & UK's premier destination for advanced robotics technology. 
+              We're on a mission to bring the future of automation to businesses and institutions across Ireland & UK.
             </p>
           </motion.div>
         </div>
@@ -68,7 +68,7 @@ export default function About() {
               <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
                 At FusionHumanoids.com, we believe that advanced robotics should be accessible to every 
-                organization in Ireland. Whether you're a research institution exploring the frontiers 
+                organization in Ireland & UK. Whether you're a research institution exploring the frontiers 
                 of AI, a manufacturer looking to automate operations, or an enterprise seeking innovative 
                 solutions, we're here to help.
               </p>
@@ -94,7 +94,7 @@ export default function About() {
               {[
                 { icon: Building2, label: 'Part of Fusion Technologies' },
                 { icon: Award, label: 'Official Unitree Partner' },
-                { icon: Handshake, label: 'Irish Business Focus' },
+                { icon: Handshake, label: 'Ireland & UK Business Focus' },
                 { icon: Shield, label: 'EU Compliant Products' },
               ].map((item, i) => (
                 <div key={i} className="p-6 rounded-xl bg-card border border-border text-center">
@@ -165,7 +165,7 @@ export default function About() {
               <p className="text-muted-foreground mb-8 leading-relaxed">
                 Fusion Technologies provides the backbone for our operations, including logistics, 
                 customer service, technical support, and compliance management. This allows FusionHumanoids.com 
-                to focus on what we do best: bringing world-class robotics to Ireland.
+                to focus on what we do best: bringing world-class robotics to Ireland & UK.
               </p>
               <a 
                 href="https://fusiontechnologies.ie" 

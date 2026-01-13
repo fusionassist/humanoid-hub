@@ -26,7 +26,7 @@ const services = [
   {
     icon: Package,
     title: 'Spare Parts',
-    description: 'Genuine manufacturer spare parts with fast delivery across Ireland to minimize downtime.',
+    description: 'Genuine manufacturer spare parts with fast delivery across Ireland & UK to minimize downtime.',
     features: ['Genuine OEM parts', 'Fast delivery nationwide', 'Parts inventory management', 'Emergency parts service'],
   },
 ];

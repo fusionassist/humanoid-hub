@@ -43,7 +43,7 @@ export function Header() {
           <Link to="/" className="flex items-center gap-3">
             <img 
               src={fusionLogo} 
-              alt="Humanoids.ie" 
+              alt="FusionHumanoids.com" 
               className="h-12 w-auto"
             />
           </Link>
