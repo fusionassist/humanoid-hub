@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { ProductCard } from '@/components/products/ProductCard';
 import { getFeaturedProducts } from '@/data/products';
 import heroHumanoid from '@/assets/hero-humanoid.jpg';
-import heroRobotDog from '@/assets/hero-robot-dog.jpg';
+import heroRobotDog from '@/assets/products/unitree-go2.png';
 
 const features = [
   {
