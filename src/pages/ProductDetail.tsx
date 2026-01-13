@@ -1,10 +1,12 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Download, ExternalLink, Check, Zap, MessageSquare, Play } from 'lucide-react';
+import { ArrowLeft, Download, ExternalLink, Check, Zap, MessageSquare, Play, ChevronLeft, ChevronRight, Image as ImageIcon } from 'lucide-react';
+import { useState } from 'react';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { QuoteForm } from '@/components/forms/QuoteForm';
 import { getProductBySlug } from '@/data/products';
 import { getManufacturerById } from '@/data/manufacturers';
@@ -30,6 +32,20 @@ export default function ProductDetail() {
   const product = getProductBySlug(slug || '');
   const manufacturer = product ? getManufacturerById(product.manufacturerId) : null;
   const productImage = product ? getProductImage(product.id) : null;
+  const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
+
+  const allImages = product ? [
+    ...(productImage ? [productImage] : []),
+    ...(product.gallery || []),
+  ] : [];
+
+  const nextImage = () => {
+    setCurrentGalleryIndex((prev) => (prev + 1) % allImages.length);
+  };
+
+  const prevImage = () => {
+    setCurrentGalleryIndex((prev) => (prev - 1 + allImages.length) % allImages.length);
+  };
 
   if (!product) {
     return (
@@ -66,31 +82,79 @@ export default function ProductDetail() {
       <section className="py-12 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-            {/* Product Image */}
+            {/* Product Image Gallery */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
-              className="relative aspect-square rounded-2xl bg-gradient-to-br from-secondary to-muted overflow-hidden"
+              className="space-y-4"
             >
-              {productImage ? (
-                <img 
-                  src={productImage} 
-                  alt={product.name}
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Zap className="w-32 h-32 text-muted-foreground/20" />
+              {/* Main Image */}
+              <div className="relative aspect-[16/10] rounded-2xl bg-gradient-to-br from-secondary to-muted overflow-hidden">
+                {allImages.length > 0 ? (
+                  <img 
+                    src={allImages[currentGalleryIndex]} 
+                    alt={`${product.name} - Image ${currentGalleryIndex + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Zap className="w-32 h-32 text-muted-foreground/20" />
+                  </div>
+                )}
+                
+                {/* Navigation Arrows */}
+                {allImages.length > 1 && (
+                  <>
+                    <button
+                      onClick={prevImage}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-background/80 hover:bg-background transition-colors"
+                    >
+                      <ChevronLeft className="w-5 h-5" />
+                    </button>
+                    <button
+                      onClick={nextImage}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-background/80 hover:bg-background transition-colors"
+                    >
+                      <ChevronRight className="w-5 h-5" />
+                    </button>
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-background/80 text-sm">
+                      {currentGalleryIndex + 1} / {allImages.length}
+                    </div>
+                  </>
+                )}
+
+                <div className="absolute top-6 left-6 flex flex-col gap-2">
+                  <Badge className={cn("border text-sm px-3 py-1", availability.className)}>
+                    {availability.label}
+                  </Badge>
+                  <Badge variant="secondary" className="capitalize text-sm px-3 py-1">
+                    {product.category.replace('-', ' ')}
+                  </Badge>
+                </div>
+              </div>
+
+              {/* Thumbnail Strip */}
+              {allImages.length > 1 && (
+                <div className="flex gap-2 overflow-x-auto pb-2">
+                  {allImages.slice(0, 8).map((img, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setCurrentGalleryIndex(i)}
+                      className={cn(
+                        "flex-shrink-0 w-20 h-14 rounded-lg overflow-hidden border-2 transition-colors",
+                        currentGalleryIndex === i ? "border-primary" : "border-transparent hover:border-muted-foreground/50"
+                      )}
+                    >
+                      <img src={img} alt="" className="w-full h-full object-cover" />
+                    </button>
+                  ))}
+                  {allImages.length > 8 && (
+                    <div className="flex-shrink-0 w-20 h-14 rounded-lg bg-muted flex items-center justify-center text-sm text-muted-foreground">
+                      +{allImages.length - 8} more
+                    </div>
+                  )}
                 </div>
               )}
-              <div className="absolute top-6 left-6 flex flex-col gap-2">
-                <Badge className={cn("border text-sm px-3 py-1", availability.className)}>
-                  {availability.label}
-                </Badge>
-                <Badge variant="secondary" className="capitalize text-sm px-3 py-1">
-                  {product.category.replace('-', ' ')}
-                </Badge>
-              </div>
             </motion.div>
 
             {/* Product Info */}
@@ -166,6 +230,14 @@ export default function ProductDetail() {
               >
                 Specifications
               </TabsTrigger>
+              {allImages.length > 1 && (
+                <TabsTrigger 
+                  value="gallery"
+                  className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary px-6 py-4"
+                >
+                  Gallery ({allImages.length})
+                </TabsTrigger>
+              )}
               {product.media.length > 0 && (
                 <TabsTrigger 
                   value="videos"
@@ -228,15 +300,72 @@ export default function ProductDetail() {
 
             <TabsContent value="specs" className="mt-0">
               <h2 className="text-2xl font-bold mb-6">Technical Specifications</h2>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              
+              {/* Key Specs Summary */}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
                 {product.keySpecs.map((spec, i) => (
-                  <div key={i} className="p-6 rounded-xl bg-secondary/50 border border-border">
-                    <p className="text-sm text-muted-foreground mb-2">{spec.label}</p>
-                    <p className="text-xl font-semibold">{spec.value}</p>
+                  <div key={i} className="p-4 rounded-xl bg-secondary/50 border border-border">
+                    <p className="text-xs text-muted-foreground mb-1">{spec.label}</p>
+                    <p className="text-lg font-semibold">{spec.value}</p>
                   </div>
                 ))}
               </div>
+
+              {/* Detailed Specs Accordion */}
+              {product.detailedSpecs && product.detailedSpecs.length > 0 && (
+                <div className="mt-8">
+                  <h3 className="text-xl font-semibold mb-4">Full Specifications</h3>
+                  <Accordion type="multiple" className="space-y-2">
+                    {product.detailedSpecs.map((section, i) => (
+                      <AccordionItem 
+                        key={i} 
+                        value={`section-${i}`}
+                        className="border border-border rounded-xl px-6 bg-card"
+                      >
+                        <AccordionTrigger className="text-lg font-medium hover:no-underline">
+                          {section.title}
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <div className="grid sm:grid-cols-2 gap-4 pb-4">
+                            {section.specs.map((spec, j) => (
+                              <div key={j} className="flex justify-between items-start py-2 border-b border-border/50 last:border-0">
+                                <span className="text-muted-foreground text-sm">{spec.label}</span>
+                                <span className="text-right font-medium text-sm max-w-[60%]">{spec.value}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </div>
+              )}
             </TabsContent>
+
+            {/* Gallery Tab */}
+            {allImages.length > 1 && (
+              <TabsContent value="gallery" className="mt-0">
+                <h2 className="text-2xl font-bold mb-6">Image Gallery</h2>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {allImages.map((img, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setCurrentGalleryIndex(i)}
+                      className="group relative aspect-video rounded-xl overflow-hidden bg-secondary/50 border border-border hover:border-primary/50 transition-colors"
+                    >
+                      <img 
+                        src={img} 
+                        alt={`${product.name} - Image ${i + 1}`}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                        <ImageIcon className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </TabsContent>
+            )}
 
             {product.media.length > 0 && (
               <TabsContent value="videos" className="mt-0">
