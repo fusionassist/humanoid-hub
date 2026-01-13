@@ -127,16 +127,11 @@ The G1 is designed to work with UnifoLM (Unified Robot Large Model), helping cre
     ],
     media: [
       'https://www.unitree.com/images/7504897529034b05890225e149d3af28.mp4',
-      'https://www.unitree.com/images/1f6a39bc56de4dbaa1e9e2adaf4fd5dc.mp4',
-      'https://www.unitree.com/images/ccb5bcac52474ae0a1e34ab47a361d7b.mp4',
-      'https://www.unitree.com/images/3d80d1f84b774f66a79b84f47f0f1ba2.mp4',
     ],
     thumbnail: '/placeholder.svg',
     resourceLinks: [
       { title: 'G1 Product Page', url: 'https://www.unitree.com/g1', type: 'datasheet' },
       { title: 'G1 Flexibility Demo', url: 'https://www.unitree.com/images/7504897529034b05890225e149d3af28.mp4', type: 'video' },
-      { title: 'AI Learning Demo', url: 'https://www.unitree.com/images/1f6a39bc56de4dbaa1e9e2adaf4fd5dc.mp4', type: 'video' },
-      { title: 'Dexterous Hand Demo', url: 'https://www.unitree.com/images/ccb5bcac52474ae0a1e34ab47a361d7b.mp4', type: 'video' },
       { title: 'SDK Documentation', url: 'https://www.unitree.com/g1', type: 'software' },
     ],
     availability: 'available',
