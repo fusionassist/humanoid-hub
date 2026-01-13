@@ -18,7 +18,7 @@ export default function Terms() {
               <section>
                 <h2 className="text-2xl font-semibold mb-4">1. Acceptance of Terms</h2>
                 <p className="text-muted-foreground mb-4">
-                  By accessing and using Humanoids.ie ("the Site"), you accept and agree to be bound 
+                  By accessing and using FusionHumanoids.com ("the Site"), you accept and agree to be bound 
                   by these Terms of Service. If you do not agree to these terms, please do not use our Site.
                 </p>
               </section>
@@ -26,7 +26,7 @@ export default function Terms() {
               <section>
                 <h2 className="text-2xl font-semibold mb-4">2. Products and Services</h2>
                 <p className="text-muted-foreground mb-4">
-                  Humanoids.ie is operated by Fusion Technologies and serves as an authorized reseller 
+                  FusionHumanoids.com is operated by Fusion Technologies and serves as an authorized reseller 
                   of robotics products in Ireland. All products are subject to availability and may 
                   require lead times for delivery.
                 </p>
@@ -49,7 +49,7 @@ export default function Terms() {
                 <h2 className="text-2xl font-semibold mb-4">4. Intellectual Property</h2>
                 <p className="text-muted-foreground mb-4">
                   All content on this Site, including text, graphics, logos, and images, is the property 
-                  of Humanoids.ie/Fusion Technologies or its content suppliers. Product images and 
+                  of FusionHumanoids.com/Fusion Technologies or its content suppliers. Product images and 
                   specifications are provided by manufacturers and used with permission.
                 </p>
               </section>
@@ -57,7 +57,7 @@ export default function Terms() {
               <section>
                 <h2 className="text-2xl font-semibold mb-4">5. Limitation of Liability</h2>
                 <p className="text-muted-foreground mb-4">
-                  To the fullest extent permitted by law, Humanoids.ie and Fusion Technologies shall 
+                  To the fullest extent permitted by law, FusionHumanoids.com and Fusion Technologies shall 
                   not be liable for any indirect, incidental, special, consequential, or punitive 
                   damages arising from your use of the Site or our products.
                 </p>
@@ -77,8 +77,8 @@ export default function Terms() {
                   For questions about these Terms, please contact us at:
                 </p>
                 <p className="text-muted-foreground mt-2">
-                  Email: legal@humanoids.ie<br />
-                  Address: Dublin, Ireland
+                  Email: legal@fusionhumanoids.com<br />
+                  Address: Dromone, Oldcastle, Co Meath A82E0W4, Ireland
                 </p>
               </section>
             </div>

@@ -32,10 +32,10 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">H</span>
+                <span className="text-primary-foreground font-bold text-xl">F</span>
               </div>
               <div className="flex flex-col">
-                <span className="font-bold text-lg">Humanoids.ie</span>
+                <span className="font-bold text-lg">FusionHumanoids.com</span>
                 <span className="text-xs text-muted-foreground">by Fusion Technologies</span>
               </div>
             </Link>
@@ -118,7 +118,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Humanoids.ie — Part of Fusion Technologies. All rights reserved.
+            © {new Date().getFullYear()} FusionHumanoids.com — Part of Fusion Technologies. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <a

@@ -164,7 +164,7 @@ export default function Downloads() {
           <div className="mt-12 p-6 rounded-xl bg-secondary/30 border border-border">
             <h3 className="font-semibold mb-2">About Downloads</h3>
             <p className="text-sm text-muted-foreground">
-              All download links direct to official manufacturer websites. Humanoids.ie does not host 
+              All download links direct to official manufacturer websites. FusionHumanoids.com does not host 
               manufacturer documentation. For the latest versions and additional resources, visit the 
               manufacturer's official website.
             </p>

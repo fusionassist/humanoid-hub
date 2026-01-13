@@ -26,7 +26,7 @@ export default function Cookies() {
 
               <section>
                 <h2 className="text-2xl font-semibold mb-4">How We Use Cookies</h2>
-                <p className="text-muted-foreground mb-4">Humanoids.ie uses cookies for the following purposes:</p>
+                <p className="text-muted-foreground mb-4">FusionHumanoids.com uses cookies for the following purposes:</p>
                 <ul className="list-disc list-inside text-muted-foreground space-y-2">
                   <li><strong>Essential Cookies:</strong> Required for the website to function properly</li>
                   <li><strong>Analytics Cookies:</strong> Help us understand how visitors interact with our website</li>
@@ -94,8 +94,8 @@ export default function Cookies() {
                   If you have questions about our use of cookies, please contact us at:
                 </p>
                 <p className="text-muted-foreground mt-2">
-                  Email: privacy@humanoids.ie<br />
-                  Address: Dublin, Ireland
+                  Email: privacy@fusionhumanoids.com<br />
+                  Address: Dromone, Oldcastle, Co Meath A82E0W4, Ireland
                 </p>
               </section>
             </div>
