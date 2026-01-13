@@ -10,7 +10,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { QuoteForm } from '@/components/forms/QuoteForm';
 import { getProductBySlug } from '@/data/products';
 import { getManufacturerById } from '@/data/manufacturers';
-import { getProductImage } from '@/data/productImages';
+import { getProductImage, getProductGallery } from '@/data/productImages';
 import { cn } from '@/lib/utils';
 
 const availabilityConfig = {
@@ -34,8 +34,10 @@ export default function ProductDetail() {
   const productImage = product ? getProductImage(product.id) : null;
   const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
 
+  const productGallery = product ? getProductGallery(product.id) : [];
   const allImages = product ? [
     ...(productImage ? [productImage] : []),
+    ...productGallery,
     ...(product.gallery || []),
   ] : [];
 

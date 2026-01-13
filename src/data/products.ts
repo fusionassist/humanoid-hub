@@ -191,20 +191,7 @@ The G1 is designed to work with UnifoLM (Unified Robot Large Model), helping cre
       'Quick-release 9000mAh smart battery',
       'UnifoLM (Unified Robot Large Model) compatible',
     ],
-    gallery: [
-      'https://www.unitree.com/images/9698385312f84cfcaca4fcc6a58e4ae3_2740x1720.jpg',
-      'https://www.unitree.com/images/352505b30e5f4f6baf696c2e796ff022_2740x1720.jpg',
-      'https://www.unitree.com/images/52688de58de044358e4792a5b7c1593d_2740x1720.jpg',
-      'https://www.unitree.com/images/a7458205b63e4ff5a501c1ae84d0988b_2740x1720.jpg',
-      'https://www.unitree.com/images/a0e8042bd2df4c47af28ff371bb6b4fa_2740x1720.jpg',
-      'https://www.unitree.com/images/5d03fc0c0d894b47ba7a08ec9c76a773_2740x1720.jpg',
-      'https://www.unitree.com/images/b3e6ff3a8b9740da9b1176bd84867d3c_2740x1720.jpg',
-      'https://www.unitree.com/images/fe964a180b8a45c2944dabf980d6a80a_2740x1720.jpg',
-      'https://www.unitree.com/images/a26acb69e9cc4613886897b6f2fbdab3_2740x1720.jpg',
-      'https://www.unitree.com/images/5e3be35a6ca143eeb4cb90f98100c609_2740x1720.jpg',
-      'https://www.unitree.com/images/16b0809f5d2645ad92c8da316e5eaade_2000x1471.png',
-      'https://www.unitree.com/images/396b6c810c4a4d8b9710e76bb0d7cc4b_3840x3602.png',
-    ],
+    gallery: [], // Gallery loaded from productImages.ts
     media: [
       'https://www.unitree.com/images/7504897529034b05890225e149d3af28.mp4',
     ],
