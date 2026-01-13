@@ -46,18 +46,18 @@ export function Footer() {
             <div className="space-y-3 text-sm text-muted-foreground">
               <div className="flex items-center gap-3">
                 <MapPin className="w-4 h-4 text-primary" />
-                <span>Dublin, Ireland</span>
+                <span>Dromone, Oldcastle, Co Meath A82E0W4, Ireland</span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-primary" />
-                <a href="mailto:info@humanoids.ie" className="hover:text-foreground transition-colors">
-                  info@humanoids.ie
+                <a href="mailto:sales@fusionhumanoids.com" className="hover:text-foreground transition-colors">
+                  sales@fusionhumanoids.com
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-primary" />
-                <a href="tel:+35312345678" className="hover:text-foreground transition-colors">
-                  +353 1 234 5678
+                <a href="tel:+353449672855" className="hover:text-foreground transition-colors">
+                  +353 44 967 2855
                 </a>
               </div>
             </div>
