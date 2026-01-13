@@ -11,7 +11,7 @@ import heroRobotDog from '@/assets/products/unitree-go2.png';
 const features = [
   {
     icon: Shield,
-    title: 'Certified Partner',
+    title: 'Official Unitree Partner',
     description: 'Official Unitree distributor for Ireland with full warranty support.',
   },
   {
