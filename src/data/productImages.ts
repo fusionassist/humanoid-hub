@@ -1,6 +1,6 @@
 // Product image imports
 import unitreeH1 from '@/assets/products/unitree-h1.png';
-import unitreeH2 from '@/assets/products/unitree-h2.jpg';
+import unitreeH2 from '@/assets/products/unitree-h2.png';
 import unitreeG1 from '@/assets/products/unitree-g1.png';
 import unitreeGo2 from '@/assets/products/unitree-go2.jpg';
 import unitreeB2 from '@/assets/products/unitree-b2.jpg';
