@@ -21,6 +21,11 @@ export interface ProductResource {
   type: 'datasheet' | 'manual' | 'brochure' | 'video' | 'software';
 }
 
+export interface ProductSpecSection {
+  title: string;
+  specs: ProductSpec[];
+}
+
 export interface Product {
   id: string;
   name: string;
@@ -30,13 +35,17 @@ export interface Product {
   shortDescription: string;
   longDescription: string;
   keySpecs: ProductSpec[];
+  detailedSpecs?: ProductSpecSection[];
   useCases: string[];
   features: string[];
   media: string[];
+  gallery?: string[];
   thumbnail: string;
   resourceLinks: ProductResource[];
   availability: 'available' | 'coming-soon' | 'pre-order';
   featured: boolean;
+  price?: string;
+  highlights?: string[];
 }
 
 export interface Lead {
