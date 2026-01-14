@@ -89,13 +89,13 @@ Designed for real-world deployment, the H2 incorporates lessons learned from ext
     slug: 'unitree-g1',
     manufacturerId: 'unitree',
     category: 'humanoid',
-    shortDescription: 'Humanoid agent AI avatar with flexibility beyond ordinary people. Price from $13.5K.',
+    shortDescription: 'Humanoid agent AI avatar with flexibility beyond ordinary people.',
     longDescription: `The Unitree G1 is a revolutionary humanoid agent AI avatar that pushes the boundaries of robotic flexibility and intelligence. With an extra-large joint movement angle space and 23-43 joint motors, the G1 achieves flexibility beyond ordinary people.
 
 Driven by imitation and reinforcement learning, the G1 represents robotics technology accelerated by AI that is upgrading and evolving every day. The optional force-control dexterous hand (Dex3-1) enables precise manipulation of objects, simulating human hands with force-position hybrid control for sensitive and reliable operation.
 
 The G1 is designed to work with UnifoLM (Unified Robot Large Model), helping create a new era of intelligence together. With continuous OTA software upgrades and updates, your G1 keeps getting smarter over time.`,
-    price: 'From $13.5K',
+    
     highlights: [
       'Flexibility beyond ordinary people',
       'Imitation & reinforcement learning driven',
