@@ -1,0 +1,166 @@
+{
+  "common": {
+    "home": "Inicio",
+    "products": "Productos",
+    "about": "Nosotros",
+    "support": "Soporte",
+    "contact": "Contacto",
+    "downloads": "Descargas",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "cookies": "Cookies",
+    "learnMore": "Más información",
+    "viewAll": "Ver todo",
+    "backTo": "Volver a",
+    "language": "Idioma"
+  },
+  "hero": {
+    "tagline": "El socio robótico líder de Irlanda y Reino Unido",
+    "title": "El futuro de la",
+    "titleHighlight": "Robótica está aquí",
+    "description": "El destino exclusivo de Irlanda y Reino Unido para robots humanoides y perros robot de clase mundial. Llevamos la tecnología de vanguardia de Unitree a empresas e instituciones en toda Irlanda y Reino Unido.",
+    "exploreProducts": "Explorar productos",
+    "requestQuote": "Solicitar presupuesto"
+  },
+  "categories": {
+    "title": "Nuestras categorías de productos",
+    "description": "Desde robots humanoides hasta cuadrúpedos ágiles, descubre la solución robótica perfecta para tus necesidades.",
+    "humanoid": {
+      "title": "Robots humanoides",
+      "description": "Robots bípedos avanzados para investigación, industria y aplicaciones de servicio."
+    },
+    "robotDog": {
+      "title": "Perros robot",
+      "description": "Robots cuadrúpedos versátiles para inspección, seguridad y entretenimiento."
+    },
+    "viewProducts": "Ver productos"
+  },
+  "featured": {
+    "title": "Robots destacados",
+    "description": "Explora nuestra selección de robots humanoides y cuadrúpedos de vanguardia de Unitree.",
+    "viewAll": "Ver todos los productos"
+  },
+  "whyChooseUs": {
+    "title": "¿Por qué elegir FusionHumanoids.com?",
+    "description": "Como socio robótico dedicado de Irlanda y Reino Unido, proporcionamos soporte integral desde la consulta hasta el despliegue.",
+    "partner": {
+      "title": "Socio oficial de Unitree",
+      "description": "Distribuidor oficial de Unitree para Irlanda con soporte completo de garantía."
+    },
+    "delivery": {
+      "title": "Entrega irlandesa",
+      "description": "Entrega rápida y asegurada en toda Irlanda y Reino Unido con servicio premium disponible."
+    },
+    "support": {
+      "title": "Soporte experto",
+      "description": "Equipo de soporte técnico local con experiencia en robótica y formación."
+    },
+    "compliance": {
+      "title": "Cumplimiento total",
+      "description": "Todos los robots cumplen con los estándares de seguridad de la UE y los requisitos regulatorios irlandeses."
+    }
+  },
+  "testimonials": {
+    "title": "Confianza de líderes de la industria",
+    "description": "Descubre cómo las organizaciones irlandesas aprovechan la tecnología robótica para la innovación.",
+    "placeholder": "Marcador de posición para testimonios - Aquí se añadirán testimonios reales de clientes para mostrar el impacto de las soluciones robóticas en empresas irlandesas."
+  },
+  "cta": {
+    "title": "¿Listo para transformar tu negocio?",
+    "description": "Contacta con nuestro equipo para una consulta personalizada y descubre cómo la robótica puede revolucionar tus operaciones.",
+    "consultation": "Consulta gratuita",
+    "browse": "Explorar productos"
+  },
+  "products": {
+    "catalog": "Catálogo de productos",
+    "catalogDescription": "Explora nuestra gama completa de robots humanoides y soluciones robóticas disponibles en Irlanda y Reino Unido.",
+    "search": "Buscar productos...",
+    "filters": "Filtros",
+    "category": "Categoría",
+    "brand": "Marca",
+    "availability": "Disponibilidad",
+    "allCategories": "Todas las categorías",
+    "allBrands": "Todas las marcas",
+    "all": "Todos",
+    "available": "Disponible",
+    "preOrder": "Pedido anticipado",
+    "comingSoon": "Próximamente",
+    "showing": "Mostrando",
+    "noProducts": "No se encontraron productos",
+    "clearFilters": "Limpiar filtros",
+    "clearAll": "Limpiar todos los filtros"
+  },
+  "productDetail": {
+    "backToProducts": "Volver a productos",
+    "availableNow": "Disponible ahora",
+    "preOrderAvailable": "Pedido anticipado disponible",
+    "price": "Precio",
+    "requestQuote": "Solicitar presupuesto",
+    "vatNote": "Todos los precios sin IVA (23% Irlanda, 20% Reino Unido). Contáctenos para precios empresariales.",
+    "requestQuoteBtn": "Solicitar presupuesto",
+    "contactSales": "Contactar ventas",
+    "overview": "Descripción",
+    "specifications": "Especificaciones",
+    "gallery": "Galería",
+    "videos": "Vídeos",
+    "about": "Sobre",
+    "keyFeatures": "Características principales",
+    "useCases": "Casos de uso",
+    "technicalSpecs": "Especificaciones técnicas",
+    "fullSpecs": "Especificaciones completas",
+    "imageGallery": "Galería de imágenes",
+    "productVideos": "Vídeos del producto",
+    "demoVideo": "Vídeo de demostración",
+    "resources": "Recursos y descargas",
+    "download": "Descargar",
+    "getQuote": "Obtener presupuesto",
+    "formTitle": "Solicitar presupuesto para",
+    "formDescription": "Complete el formulario a continuación y nuestro equipo se pondrá en contacto en 24 horas."
+  },
+  "contact": {
+    "title": "Contáctenos",
+    "description": "¿Listo para explorar el futuro de la robótica? Póngase en contacto con nuestro equipo para presupuestos, preguntas técnicas u oportunidades de asociación.",
+    "getInTouch": "Ponerse en contacto",
+    "helpText": "Estamos aquí para ayudarle con cualquier pregunta sobre nuestros productos o servicios.",
+    "address": "Dirección",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "businessHours": "Horario comercial",
+    "byAppointment": "Solo con cita previa",
+    "responseTime": "Respondemos en 24 horas",
+    "weekdays": "Lun-Vie, 9-18h",
+    "mondayFriday": "Lunes - Viernes",
+    "hours": "9:00 - 18:00 IST",
+    "sendMessage": "Envíenos un mensaje",
+    "fullName": "Nombre completo",
+    "emailAddress": "Correo electrónico",
+    "phoneNumber": "Número de teléfono",
+    "company": "Empresa",
+    "inquiryType": "Tipo de consulta",
+    "selectInquiry": "Seleccione el tipo de consulta",
+    "requestQuote": "Solicitar presupuesto",
+    "salesInquiry": "Consulta de ventas",
+    "technicalSupport": "Soporte técnico",
+    "partnershipInquiry": "Consulta de asociación",
+    "generalInquiry": "Consulta general",
+    "message": "Mensaje",
+    "messagePlaceholder": "Cuéntenos sobre sus requisitos, preguntas o cómo podemos ayudar...",
+    "sending": "Enviando...",
+    "send": "Enviar mensaje",
+    "privacyNote": "Al enviar este formulario, acepta nuestra",
+    "privacyPolicy": "Política de privacidad",
+    "successTitle": "Mensaje enviado",
+    "successMessage": "Gracias por contactarnos. Le responderemos en 24 horas."
+  },
+  "footer": {
+    "description": "El destino principal de Irlanda y Reino Unido para robots humanoides avanzados y soluciones de robótica cuadrúpeda.",
+    "quickLinks": "Enlaces rápidos",
+    "legal": "Legal",
+    "stayConnected": "Mantente conectado",
+    "newsletter": "Suscríbase a nuestro boletín para las últimas actualizaciones.",
+    "emailPlaceholder": "Ingrese su correo",
+    "subscribe": "Suscribirse",
+    "allRights": "Todos los derechos reservados.",
+    "authorizedDistributor": "Distribuidor autorizado de Unitree Robotics"
+  }
+}

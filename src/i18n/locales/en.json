@@ -1,0 +1,166 @@
+{
+  "common": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About",
+    "support": "Support",
+    "contact": "Contact",
+    "downloads": "Downloads",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "cookies": "Cookies",
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "backTo": "Back to",
+    "language": "Language"
+  },
+  "hero": {
+    "tagline": "Ireland & UK's Premier Robotics Partner",
+    "title": "The Future of",
+    "titleHighlight": "Robotics is Here",
+    "description": "Ireland & UK's exclusive destination for world-class humanoid robots and robot dogs. Bringing Unitree's cutting-edge technology to businesses and institutions across Ireland & UK.",
+    "exploreProducts": "Explore Products",
+    "requestQuote": "Request a Quote"
+  },
+  "categories": {
+    "title": "Our Product Categories",
+    "description": "From humanoid robots to agile quadrupeds, discover the perfect robotic solution for your needs.",
+    "humanoid": {
+      "title": "Humanoid Robots",
+      "description": "Advanced bipedal robots for research, industry, and service applications."
+    },
+    "robotDog": {
+      "title": "Robot Dogs",
+      "description": "Versatile quadruped robots for inspection, security, and entertainment."
+    },
+    "viewProducts": "View Products"
+  },
+  "featured": {
+    "title": "Featured Robots",
+    "description": "Explore our curated selection of cutting-edge humanoid robots and quadrupeds from Unitree.",
+    "viewAll": "View All Products"
+  },
+  "whyChooseUs": {
+    "title": "Why Choose FusionHumanoids.com?",
+    "description": "As Ireland & UK's dedicated robotics partner, we provide end-to-end support from consultation to deployment.",
+    "partner": {
+      "title": "Official Unitree Partner",
+      "description": "Official Unitree distributor for Ireland with full warranty support."
+    },
+    "delivery": {
+      "title": "Irish Delivery",
+      "description": "Fast, insured delivery across Ireland & UK with white-glove service available."
+    },
+    "support": {
+      "title": "Expert Support",
+      "description": "Local technical support team with robotics expertise and training."
+    },
+    "compliance": {
+      "title": "Full Compliance",
+      "description": "All robots meet EU safety standards and Irish regulatory requirements."
+    }
+  },
+  "testimonials": {
+    "title": "Trusted by Industry Leaders",
+    "description": "See how Irish organizations are leveraging robotic technology for innovation.",
+    "placeholder": "Testimonial placeholder - Real customer testimonials will be added here to showcase the impact of robotic solutions in Irish businesses."
+  },
+  "cta": {
+    "title": "Ready to Transform Your Business?",
+    "description": "Contact our team for a personalized consultation and discover how robotics can revolutionize your operations.",
+    "consultation": "Get a Free Consultation",
+    "browse": "Browse Products"
+  },
+  "products": {
+    "catalog": "Product Catalog",
+    "catalogDescription": "Explore our full range of humanoid robots and robotic solutions available in Ireland & UK.",
+    "search": "Search products...",
+    "filters": "Filters",
+    "category": "Category",
+    "brand": "Brand",
+    "availability": "Availability",
+    "allCategories": "All Categories",
+    "allBrands": "All Brands",
+    "all": "All",
+    "available": "Available",
+    "preOrder": "Pre-Order",
+    "comingSoon": "Coming Soon",
+    "showing": "Showing",
+    "noProducts": "No products found",
+    "clearFilters": "Clear filters",
+    "clearAll": "Clear All Filters"
+  },
+  "productDetail": {
+    "backToProducts": "Back to Products",
+    "availableNow": "Available Now",
+    "preOrderAvailable": "Pre-Order Available",
+    "price": "Price",
+    "requestQuote": "Request a Quote",
+    "vatNote": "All prices exclusive of VAT (23% Ireland, 20% UK). Contact us for enterprise pricing.",
+    "requestQuoteBtn": "Request Quote",
+    "contactSales": "Contact Sales",
+    "overview": "Overview",
+    "specifications": "Specifications",
+    "gallery": "Gallery",
+    "videos": "Videos",
+    "about": "About",
+    "keyFeatures": "Key Features",
+    "useCases": "Use Cases",
+    "technicalSpecs": "Technical Specifications",
+    "fullSpecs": "Full Specifications",
+    "imageGallery": "Image Gallery",
+    "productVideos": "Product Videos",
+    "demoVideo": "Demo Video",
+    "resources": "Resources & Downloads",
+    "download": "Download",
+    "getQuote": "Get a Quote",
+    "formTitle": "Request a Quote for",
+    "formDescription": "Fill out the form below and our team will get back to you within 24 hours."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Ready to explore the future of robotics? Get in touch with our team for quotes, technical questions, or partnership opportunities.",
+    "getInTouch": "Get in Touch",
+    "helpText": "We're here to help with any questions about our products or services.",
+    "address": "Address",
+    "email": "Email",
+    "phone": "Phone",
+    "businessHours": "Business Hours",
+    "byAppointment": "By appointment only",
+    "responseTime": "We respond within 24 hours",
+    "weekdays": "Mon-Fri, 9am-6pm",
+    "mondayFriday": "Monday - Friday",
+    "hours": "9:00 AM - 6:00 PM IST",
+    "sendMessage": "Send us a Message",
+    "fullName": "Full Name",
+    "emailAddress": "Email Address",
+    "phoneNumber": "Phone Number",
+    "company": "Company",
+    "inquiryType": "Inquiry Type",
+    "selectInquiry": "Select inquiry type",
+    "requestQuote": "Request a Quote",
+    "salesInquiry": "Sales Inquiry",
+    "technicalSupport": "Technical Support",
+    "partnershipInquiry": "Partnership Inquiry",
+    "generalInquiry": "General Inquiry",
+    "message": "Message",
+    "messagePlaceholder": "Tell us about your requirements, questions, or how we can help...",
+    "sending": "Sending...",
+    "send": "Send Message",
+    "privacyNote": "By submitting this form, you agree to our",
+    "privacyPolicy": "Privacy Policy",
+    "successTitle": "Message Sent",
+    "successMessage": "Thank you for contacting us. We'll get back to you within 24 hours."
+  },
+  "footer": {
+    "description": "Ireland & UK's premier destination for advanced humanoid robots and quadruped robotics solutions.",
+    "quickLinks": "Quick Links",
+    "legal": "Legal",
+    "stayConnected": "Stay Connected",
+    "newsletter": "Subscribe to our newsletter for the latest updates.",
+    "emailPlaceholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "allRights": "All rights reserved.",
+    "authorizedDistributor": "Authorized Distributor of Unitree Robotics"
+  }
+}

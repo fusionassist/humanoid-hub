@@ -1,0 +1,166 @@
+{
+  "common": {
+    "home": "Startseite",
+    "products": "Produkte",
+    "about": "Über uns",
+    "support": "Support",
+    "contact": "Kontakt",
+    "downloads": "Downloads",
+    "privacy": "Datenschutz",
+    "terms": "AGB",
+    "cookies": "Cookies",
+    "learnMore": "Mehr erfahren",
+    "viewAll": "Alle anzeigen",
+    "backTo": "Zurück zu",
+    "language": "Sprache"
+  },
+  "hero": {
+    "tagline": "Irlands & Großbritanniens führender Robotik-Partner",
+    "title": "Die Zukunft der",
+    "titleHighlight": "Robotik ist hier",
+    "description": "Irlands & Großbritanniens exklusive Anlaufstelle für erstklassige humanoide Roboter und Roboterhunde. Wir bringen Unitrees hochmoderne Technologie zu Unternehmen und Institutionen in ganz Irland & Großbritannien.",
+    "exploreProducts": "Produkte entdecken",
+    "requestQuote": "Angebot anfordern"
+  },
+  "categories": {
+    "title": "Unsere Produktkategorien",
+    "description": "Von humanoiden Robotern bis zu agilen Vierbeinern - entdecken Sie die perfekte Roboterlösung für Ihre Bedürfnisse.",
+    "humanoid": {
+      "title": "Humanoide Roboter",
+      "description": "Fortschrittliche zweibeinige Roboter für Forschung, Industrie und Serviceanwendungen."
+    },
+    "robotDog": {
+      "title": "Roboterhunde",
+      "description": "Vielseitige Vierbeiner-Roboter für Inspektion, Sicherheit und Unterhaltung."
+    },
+    "viewProducts": "Produkte ansehen"
+  },
+  "featured": {
+    "title": "Ausgewählte Roboter",
+    "description": "Entdecken Sie unsere kuratierte Auswahl an hochmodernen humanoiden Robotern und Vierbeinern von Unitree.",
+    "viewAll": "Alle Produkte ansehen"
+  },
+  "whyChooseUs": {
+    "title": "Warum FusionHumanoids.com?",
+    "description": "Als Irlands & Großbritanniens dedizierter Robotik-Partner bieten wir End-to-End-Support von der Beratung bis zur Bereitstellung.",
+    "partner": {
+      "title": "Offizieller Unitree Partner",
+      "description": "Offizieller Unitree-Vertriebspartner für Irland mit voller Garantieunterstützung."
+    },
+    "delivery": {
+      "title": "Irische Lieferung",
+      "description": "Schnelle, versicherte Lieferung in ganz Irland & UK mit verfügbarem White-Glove-Service."
+    },
+    "support": {
+      "title": "Experten-Support",
+      "description": "Lokales technisches Support-Team mit Robotik-Expertise und Schulung."
+    },
+    "compliance": {
+      "title": "Volle Konformität",
+      "description": "Alle Roboter erfüllen EU-Sicherheitsstandards und irische regulatorische Anforderungen."
+    }
+  },
+  "testimonials": {
+    "title": "Vertraut von Branchenführern",
+    "description": "Erfahren Sie, wie irische Organisationen Robotertechnologie für Innovation nutzen.",
+    "placeholder": "Testimonial-Platzhalter - Echte Kundenstimmen werden hier hinzugefügt, um die Auswirkungen von Roboterlösungen in irischen Unternehmen zu zeigen."
+  },
+  "cta": {
+    "title": "Bereit, Ihr Unternehmen zu transformieren?",
+    "description": "Kontaktieren Sie unser Team für eine persönliche Beratung und entdecken Sie, wie Robotik Ihre Abläufe revolutionieren kann.",
+    "consultation": "Kostenlose Beratung",
+    "browse": "Produkte durchsuchen"
+  },
+  "products": {
+    "catalog": "Produktkatalog",
+    "catalogDescription": "Entdecken Sie unser gesamtes Sortiment an humanoiden Robotern und Robotiklösungen, verfügbar in Irland & UK.",
+    "search": "Produkte suchen...",
+    "filters": "Filter",
+    "category": "Kategorie",
+    "brand": "Marke",
+    "availability": "Verfügbarkeit",
+    "allCategories": "Alle Kategorien",
+    "allBrands": "Alle Marken",
+    "all": "Alle",
+    "available": "Verfügbar",
+    "preOrder": "Vorbestellung",
+    "comingSoon": "Demnächst",
+    "showing": "Zeige",
+    "noProducts": "Keine Produkte gefunden",
+    "clearFilters": "Filter löschen",
+    "clearAll": "Alle Filter löschen"
+  },
+  "productDetail": {
+    "backToProducts": "Zurück zu Produkte",
+    "availableNow": "Jetzt verfügbar",
+    "preOrderAvailable": "Vorbestellung möglich",
+    "price": "Preis",
+    "requestQuote": "Angebot anfordern",
+    "vatNote": "Alle Preise zzgl. MwSt. (23% Irland, 20% UK). Kontaktieren Sie uns für Unternehmenspreise.",
+    "requestQuoteBtn": "Angebot anfordern",
+    "contactSales": "Vertrieb kontaktieren",
+    "overview": "Übersicht",
+    "specifications": "Spezifikationen",
+    "gallery": "Galerie",
+    "videos": "Videos",
+    "about": "Über",
+    "keyFeatures": "Hauptmerkmale",
+    "useCases": "Anwendungsfälle",
+    "technicalSpecs": "Technische Spezifikationen",
+    "fullSpecs": "Vollständige Spezifikationen",
+    "imageGallery": "Bildergalerie",
+    "productVideos": "Produktvideos",
+    "demoVideo": "Demo-Video",
+    "resources": "Ressourcen & Downloads",
+    "download": "Herunterladen",
+    "getQuote": "Angebot einholen",
+    "formTitle": "Angebot anfordern für",
+    "formDescription": "Füllen Sie das folgende Formular aus und unser Team meldet sich innerhalb von 24 Stunden bei Ihnen."
+  },
+  "contact": {
+    "title": "Kontaktieren Sie uns",
+    "description": "Bereit, die Zukunft der Robotik zu erkunden? Kontaktieren Sie unser Team für Angebote, technische Fragen oder Partnerschaftsmöglichkeiten.",
+    "getInTouch": "Kontakt aufnehmen",
+    "helpText": "Wir helfen Ihnen bei allen Fragen zu unseren Produkten oder Dienstleistungen.",
+    "address": "Adresse",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "businessHours": "Geschäftszeiten",
+    "byAppointment": "Nur nach Vereinbarung",
+    "responseTime": "Wir antworten innerhalb von 24 Stunden",
+    "weekdays": "Mo-Fr, 9-18 Uhr",
+    "mondayFriday": "Montag - Freitag",
+    "hours": "9:00 - 18:00 Uhr IST",
+    "sendMessage": "Nachricht senden",
+    "fullName": "Vollständiger Name",
+    "emailAddress": "E-Mail-Adresse",
+    "phoneNumber": "Telefonnummer",
+    "company": "Unternehmen",
+    "inquiryType": "Anfragetyp",
+    "selectInquiry": "Anfragetyp auswählen",
+    "requestQuote": "Angebot anfordern",
+    "salesInquiry": "Verkaufsanfrage",
+    "technicalSupport": "Technischer Support",
+    "partnershipInquiry": "Partnerschaftsanfrage",
+    "generalInquiry": "Allgemeine Anfrage",
+    "message": "Nachricht",
+    "messagePlaceholder": "Erzählen Sie uns von Ihren Anforderungen, Fragen oder wie wir helfen können...",
+    "sending": "Wird gesendet...",
+    "send": "Nachricht senden",
+    "privacyNote": "Mit dem Absenden dieses Formulars stimmen Sie unserer",
+    "privacyPolicy": "Datenschutzerklärung zu",
+    "successTitle": "Nachricht gesendet",
+    "successMessage": "Vielen Dank für Ihre Kontaktaufnahme. Wir melden uns innerhalb von 24 Stunden."
+  },
+  "footer": {
+    "description": "Irlands & Großbritanniens führende Anlaufstelle für fortschrittliche humanoide Roboter und Vierbeiner-Robotiklösungen.",
+    "quickLinks": "Schnelllinks",
+    "legal": "Rechtliches",
+    "stayConnected": "Bleiben Sie verbunden",
+    "newsletter": "Abonnieren Sie unseren Newsletter für die neuesten Updates.",
+    "emailPlaceholder": "E-Mail eingeben",
+    "subscribe": "Abonnieren",
+    "allRights": "Alle Rechte vorbehalten.",
+    "authorizedDistributor": "Autorisierter Vertriebspartner von Unitree Robotics"
+  }
+}

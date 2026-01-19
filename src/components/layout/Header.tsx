@@ -1,8 +1,10 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { cn } from '@/lib/utils';
 import fusionLogo from '@/assets/fusion-logo.png';
 
@@ -98,6 +100,7 @@ export function Header() {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
+            <LanguageSwitcher />
             <Link to="/contact">
               <Button variant="hero" size="default">
                 Request a Quote
@@ -149,7 +152,10 @@ export function Header() {
                     )}
                   </div>
                 ))}
-                <div className="pt-4 px-4">
+                <div className="pt-4 px-4 space-y-3">
+                  <div className="flex justify-center">
+                    <LanguageSwitcher />
+                  </div>
                   <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
                     <Button variant="hero" className="w-full">
                       Request a Quote
