@@ -7,6 +7,7 @@ import { ProductCard } from '@/components/products/ProductCard';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { SEO } from '@/components/SEO';
 import { products } from '@/data/products';
 import { manufacturers } from '@/data/manufacturers';
 import { ProductCategory, ProductAvailability } from '@/types';
@@ -67,7 +68,11 @@ export default function Products() {
 
   return (
     <Layout>
-      {/* Hero */}
+      <SEO 
+        title="Products"
+        description="Browse our full range of Unitree humanoid robots and robot dogs. Available for purchase in Ireland and the UK with full warranty and support."
+        canonical="/products"
+      />
       <section className="py-20 bg-gradient-to-b from-card to-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div

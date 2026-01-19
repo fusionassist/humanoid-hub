@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { SEO } from '@/components/SEO';
 import { useToast } from '@/hooks/use-toast';
 
 const contactInfo = [
@@ -81,7 +82,11 @@ export default function Contact() {
 
   return (
     <Layout>
-      {/* Hero */}
+      <SEO 
+        title="Contact Us"
+        description="Get in touch with Fusion Humanoids for quotes, technical questions, or partnership opportunities. Ireland & UK's premier robotics partner."
+        canonical="/contact"
+      />
       <section className="py-20 bg-gradient-to-b from-card to-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
