@@ -137,17 +137,17 @@ export default function Contact() {
                 ))}
               </div>
 
-              {/* Google Map Embed */}
+              {/* Google Map Embed - Oldcastle, Co Meath, Ireland */}
               <div className="aspect-video rounded-xl overflow-hidden border border-border">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2374.5!2d-7.1547!3d53.7664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d1b7c9e8b7c1f%3A0x0!2sDromone%2C%20Oldcastle%2C%20Co.%20Meath%2C%20A82E0W4%2C%20Ireland!5e0!3m2!1sen!2sie!4v1705600000000!5m2!1sen!2sie"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9498.850775940127!2d-7.166944!3d53.767778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d67c4c0e1b7a1%3A0x2600c7a819e0c20!2sOldcastle%2C%20Co.%20Meath%2C%20Ireland!5e0!3m2!1sen!2sie!4v1705600000000!5m2!1sen!2sie"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Fusion Humanoids Location - Dromone, Oldcastle, Co Meath, Ireland"
+                  title="Fusion Humanoids Location - Oldcastle, Co Meath, Ireland"
                 />
               </div>
             </motion.div>
