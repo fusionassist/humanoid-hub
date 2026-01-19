@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ArrowRight, Shield, Truck, Headphones, Award, Zap, Users, Bot, Dog } from 'lucide-react';
 import { Layout } from '@/components/layout/Layout';
@@ -50,7 +51,48 @@ const categories = [
 ];
 
 export default function Home() {
+  const { t } = useTranslation();
   const featuredProducts = getFeaturedProducts().slice(0, 6);
+
+  const features = [
+    {
+      icon: Shield,
+      title: t('whyChooseUs.partner.title'),
+      description: t('whyChooseUs.partner.description'),
+    },
+    {
+      icon: Truck,
+      title: t('whyChooseUs.delivery.title'),
+      description: t('whyChooseUs.delivery.description'),
+    },
+    {
+      icon: Headphones,
+      title: t('whyChooseUs.support.title'),
+      description: t('whyChooseUs.support.description'),
+    },
+    {
+      icon: Award,
+      title: t('whyChooseUs.compliance.title'),
+      description: t('whyChooseUs.compliance.description'),
+    },
+  ];
+
+  const categories = [
+    {
+      title: t('categories.humanoid.title'),
+      description: t('categories.humanoid.description'),
+      image: heroHumanoid,
+      href: '/products?category=humanoid',
+      icon: Bot,
+    },
+    {
+      title: t('categories.robotDog.title'),
+      description: t('categories.robotDog.description'),
+      image: heroRobotDog,
+      href: '/products?category=robot-dog',
+      icon: Dog,
+    },
+  ];
 
   return (
     <Layout>
@@ -58,6 +100,7 @@ export default function Home() {
         canonical="/"
         jsonLd={organizationSchema}
       />
+      {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0">
@@ -84,29 +127,28 @@ export default function Home() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-8"
             >
               <Zap className="w-4 h-4" />
-              Ireland & UK's Premier Robotics Partner
+              {t('hero.tagline')}
             </motion.div>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              The Future of
-              <span className="block gradient-text">Robotics is Here</span>
+              {t('hero.title')}
+              <span className="block gradient-text">{t('hero.titleHighlight')}</span>
             </h1>
 
             <p className="text-xl text-muted-foreground mb-10 max-w-2xl leading-relaxed">
-              Ireland & UK's exclusive destination for world-class humanoid robots and robot dogs. 
-              Bringing Unitree's cutting-edge technology to businesses and institutions across Ireland & UK.
+              {t('hero.description')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/products">
                 <Button variant="hero" size="xl">
-                  Explore Products
+                  {t('hero.exploreProducts')}
                   <ArrowRight className="w-5 h-5" />
                 </Button>
               </Link>
               <Link to="/contact">
                 <Button variant="hero-outline" size="xl">
-                  Request a Quote
+                  {t('hero.requestQuote')}
                 </Button>
               </Link>
             </div>
@@ -123,9 +165,9 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Product Categories</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('categories.title')}</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              From humanoid robots to agile quadrupeds, discover the perfect robotic solution for your needs.
+              {t('categories.description')}
             </p>
           </motion.div>
 
@@ -155,7 +197,7 @@ export default function Home() {
                       </div>
                       <p className="text-muted-foreground mb-4">{category.description}</p>
                       <div className="flex items-center text-primary font-medium group-hover:gap-3 gap-2 transition-all">
-                        View Products
+                        {t('categories.viewProducts')}
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </div>
