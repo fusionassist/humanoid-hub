@@ -91,12 +91,12 @@ export default function ProductDetail() {
               className="space-y-4"
             >
               {/* Main Image */}
-              <div className="relative aspect-[16/10] rounded-2xl bg-gradient-to-br from-secondary to-muted overflow-hidden">
+              <div className="relative aspect-[4/3] rounded-2xl bg-gradient-to-br from-secondary to-muted overflow-hidden">
                 {allImages.length > 0 ? (
                   <img 
                     src={allImages[currentGalleryIndex]} 
                     alt={`${product.name} - Image ${currentGalleryIndex + 1}`}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -353,12 +353,12 @@ export default function ProductDetail() {
                     <button
                       key={i}
                       onClick={() => setCurrentGalleryIndex(i)}
-                      className="group relative aspect-video rounded-xl overflow-hidden bg-secondary/50 border border-border hover:border-primary/50 transition-colors"
+                    className="group relative aspect-[4/3] rounded-xl overflow-hidden bg-secondary/50 border border-border hover:border-primary/50 transition-colors"
                     >
                       <img 
                         src={img} 
                         alt={`${product.name} - Image ${i + 1}`}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
                         <ImageIcon className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
