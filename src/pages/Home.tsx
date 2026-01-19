@@ -4,6 +4,7 @@ import { ArrowRight, Shield, Truck, Headphones, Award, Zap, Users, Bot, Dog } fr
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { ProductCard } from '@/components/products/ProductCard';
+import { SEO, organizationSchema } from '@/components/SEO';
 import { getFeaturedProducts } from '@/data/products';
 import heroHumanoid from '@/assets/hero-humanoid.jpg';
 import heroRobotDog from '@/assets/products/unitree-go2.png';
@@ -53,7 +54,10 @@ export default function Home() {
 
   return (
     <Layout>
-      {/* Hero Section */}
+      <SEO 
+        canonical="/"
+        jsonLd={organizationSchema}
+      />
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0">

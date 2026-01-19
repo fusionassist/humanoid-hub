@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { QuoteForm } from '@/components/forms/QuoteForm';
+import { SEO, createProductSchema } from '@/components/SEO';
 import { getProductBySlug } from '@/data/products';
 import { getManufacturerById } from '@/data/manufacturers';
 import { getProductImage, getProductGallery } from '@/data/productImages';
@@ -65,9 +66,23 @@ export default function ProductDetail() {
 
   const availability = availabilityConfig[product.availability];
 
+  const productSchema = createProductSchema({
+    name: product.name,
+    description: product.shortDescription,
+    image: productImage || '',
+    slug: product.slug,
+    availability: product.availability,
+  });
+
   return (
     <Layout>
-      {/* Breadcrumb */}
+      <SEO 
+        title={product.name}
+        description={product.shortDescription}
+        canonical={`/products/${product.slug}`}
+        type="product"
+        jsonLd={productSchema}
+      />
       <div className="border-b border-border bg-card">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <Link 
