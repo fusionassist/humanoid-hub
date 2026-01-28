@@ -118,3 +118,32 @@ export function createProductSchema(product: {
     }
   };
 }
+
+export function articleSchema(article: {
+  title: string;
+  description: string;
+  image: string;
+  datePublished: string;
+  author: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": article.title,
+    "description": article.description,
+    "image": article.image,
+    "datePublished": article.datePublished,
+    "author": {
+      "@type": "Person",
+      "name": article.author
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Fusion Humanoids",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://fusionhumanoids.com/fusion-logo.png"
+      }
+    }
+  };
+}

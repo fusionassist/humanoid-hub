@@ -73,3 +73,28 @@ export interface Region {
 
 export type ProductCategory = 'humanoid' | 'robot-dog' | 'industrial' | 'other';
 export type ProductAvailability = 'available' | 'coming-soon' | 'pre-order';
+
+// Blog types
+export interface BlogAuthor {
+  name: string;
+  avatar?: string;
+  role: string;
+}
+
+export interface BlogPost {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  coverImage: string;
+  author: BlogAuthor;
+  publishedAt: string;
+  readingTime: number;
+  category: BlogCategory;
+  tags: string[];
+  featured: boolean;
+  relatedProductSlugs?: string[];
+}
+
+export type BlogCategory = 'news' | 'technology' | 'industry' | 'tutorials' | 'case-studies';
