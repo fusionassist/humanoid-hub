@@ -8,6 +8,7 @@ import { ProductCard } from '@/components/products/ProductCard';
 import { SEO, organizationSchema } from '@/components/SEO';
 import { getFeaturedProducts } from '@/data/products';
 import { NewsletterPopup } from '@/components/NewsletterPopup';
+import { BlogSection } from '@/components/home/BlogSection';
 import heroHumanoid from '@/assets/hero-humanoid.jpg';
 import heroRobotDog from '@/assets/products/unitree-go2.png';
 
@@ -321,6 +322,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Blog Section */}
+      <BlogSection />
 
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-br from-primary/10 via-accent/5 to-background">

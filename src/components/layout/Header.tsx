@@ -26,6 +26,7 @@ const navigation = [
       { name: 'Unitree Robotics', href: '/brands/unitree' },
     ],
   },
+  { name: 'Blog', href: '/blog' },
   { name: 'Downloads', href: '/downloads' },
   { name: 'Support', href: '/support' },
   { name: 'About', href: '/about' },
