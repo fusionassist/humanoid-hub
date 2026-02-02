@@ -36,7 +36,14 @@ export function Footer() {
               </div>
               <div className="flex flex-col">
                 <span className="font-bold text-lg">FusionHumanoids.com</span>
-                <span className="text-xs text-muted-foreground">by Fusion Technologies</span>
+                <a 
+                  href="https://fusiontechnologies.ie/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-xs text-muted-foreground hover:text-primary transition-colors"
+                >
+                  by Fusion Technologies ↗
+                </a>
               </div>
             </Link>
             <p className="text-muted-foreground mb-6 max-w-sm">
@@ -118,7 +125,16 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} FusionHumanoids.com — Part of Fusion Technologies. All rights reserved.
+            © {new Date().getFullYear()} FusionHumanoids.com — Part of{' '}
+            <a 
+              href="https://fusiontechnologies.ie/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
+              Fusion Technologies
+            </a>
+            . All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <a
