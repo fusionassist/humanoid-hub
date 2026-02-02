@@ -8,6 +8,7 @@ import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 import { products } from '@/data/products';
+import { supabase } from '@/integrations/supabase/client';
 
 interface QuoteFormProps {
   productId?: string;
@@ -30,24 +31,47 @@ export function QuoteForm({ productId, onSuccess }: QuoteFormProps) {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      const selectedProduct = products.find(p => p.id === formData.product);
+      
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          product: selectedProduct?.name || formData.product,
+          message: formData.message,
+          formType: 'quote',
+        },
+      });
 
-    toast({
-      title: "Quote Request Submitted",
-      description: "Thank you! Our team will contact you within 24 hours.",
-    });
+      if (error) throw error;
 
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      product: productId || '',
-      message: '',
-    });
-    setIsSubmitting(false);
-    onSuccess?.();
+      toast({
+        title: "Quote Request Submitted",
+        description: "Thank you! Our team will contact you within 24 hours.",
+      });
+
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        product: productId || '',
+        message: '',
+      });
+      onSuccess?.();
+    } catch (error: any) {
+      console.error('Error sending quote request:', error);
+      toast({
+        title: "Error",
+        description: "There was a problem sending your request. Please try again or email us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
