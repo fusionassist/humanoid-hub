@@ -1,8 +1,11 @@
 import { Product } from '@/types';
 import { getManufacturerById } from '@/data/manufacturers';
+import { getProductImage, getProductGallery } from '@/data/productImages';
 
 export function generateProductBrochure(product: Product): void {
   const manufacturer = getManufacturerById(product.manufacturerId);
+  const mainImage = getProductImage(product.id);
+  const galleryImages = getProductGallery(product.id);
   
   // Create a printable HTML document
   const printWindow = window.open('', '_blank');
@@ -10,6 +13,15 @@ export function generateProductBrochure(product: Product): void {
     alert('Please allow popups to download the brochure');
     return;
   }
+
+  // Get absolute URLs for images
+  const getAbsoluteUrl = (path: string) => {
+    if (path.startsWith('http')) return path;
+    return new URL(path, window.location.origin).href;
+  };
+
+  const mainImageUrl = mainImage ? getAbsoluteUrl(mainImage) : '';
+  const galleryImageUrls = galleryImages.slice(0, 6).map(img => getAbsoluteUrl(img));
 
   const specsHTML = product.detailedSpecs?.map(section => `
     <div class="spec-section">
@@ -39,6 +51,19 @@ export function generateProductBrochure(product: Product): void {
   const useCasesHTML = product.useCases.map(useCase => `
     <span class="use-case-tag">${useCase}</span>
   `).join('');
+
+  const galleryHTML = galleryImageUrls.length > 0 ? `
+    <section class="gallery">
+      <h2>Product Gallery</h2>
+      <div class="gallery-grid">
+        ${galleryImageUrls.map(url => `
+          <div class="gallery-item">
+            <img src="${url}" alt="${product.name}" />
+          </div>
+        `).join('')}
+      </div>
+    </section>
+  ` : '';
 
   const html = `
     <!DOCTYPE html>
@@ -100,6 +125,16 @@ export function generateProductBrochure(product: Product): void {
           margin-bottom: 50px;
         }
         
+        .hero-image {
+          width: 100%;
+          max-width: 500px;
+          height: auto;
+          margin: 0 auto 30px;
+          display: block;
+          border-radius: 16px;
+          box-shadow: 0 20px 40px rgba(0, 102, 255, 0.15);
+        }
+        
         .product-name {
           font-size: 48px;
           font-weight: 700;
@@ -142,6 +177,37 @@ export function generateProductBrochure(product: Product): void {
           color: #666;
           text-transform: uppercase;
           letter-spacing: 0.5px;
+        }
+        
+        /* Gallery */
+        .gallery {
+          margin-bottom: 50px;
+          page-break-inside: avoid;
+        }
+        
+        .gallery h2 {
+          font-size: 28px;
+          margin-bottom: 25px;
+          color: #1a1a1a;
+        }
+        
+        .gallery-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 15px;
+        }
+        
+        .gallery-item {
+          border-radius: 12px;
+          overflow: hidden;
+          background: #f8f9ff;
+          border: 1px solid #e0e7ff;
+        }
+        
+        .gallery-item img {
+          width: 100%;
+          height: 150px;
+          object-fit: cover;
         }
         
         /* Description */
@@ -313,6 +379,18 @@ export function generateProductBrochure(product: Product): void {
           .no-print {
             display: none !important;
           }
+          
+          .hero-image {
+            max-width: 400px;
+          }
+          
+          .gallery-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+          
+          .gallery-item img {
+            height: 120px;
+          }
         }
         
         /* Download Button */
@@ -365,6 +443,7 @@ export function generateProductBrochure(product: Product): void {
         </header>
         
         <div class="hero">
+          ${mainImageUrl ? `<img src="${mainImageUrl}" alt="${product.name}" class="hero-image" />` : ''}
           <h1 class="product-name">${product.name}</h1>
           <p class="tagline">${product.shortDescription}</p>
         </div>
@@ -372,6 +451,8 @@ export function generateProductBrochure(product: Product): void {
         <div class="key-specs">
           ${keySpecsHTML}
         </div>
+        
+        ${galleryHTML}
         
         <section class="description">
           <h2>Overview</h2>
@@ -403,7 +484,8 @@ export function generateProductBrochure(product: Product): void {
           <div class="footer-logo">Fusion<span>Humanoids</span></div>
           <p class="footer-info">Ireland & UK's Premier Robotics Partner</p>
           <p class="footer-info">Official ${manufacturer?.name || ''} Distributor</p>
-          <p class="footer-contact">sales@fusionhumanoids.com | +353 1 234 5678</p>
+          <p class="footer-contact">sales@fusionhumanoids.com | +353 44 936 2018</p>
+          <p class="footer-info" style="margin-top: 10px;">Dromone, Oldcastle, Co Meath A82E0W4, Ireland</p>
           <p class="disclaimer">
             Specifications subject to change. For the latest information, visit fusionhumanoids.com
           </p>
