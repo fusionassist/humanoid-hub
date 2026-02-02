@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Download, ExternalLink, Check, Zap, MessageSquare, Play, ChevronLeft, ChevronRight, Image as ImageIcon } from 'lucide-react';
+import { ArrowLeft, Download, ExternalLink, Check, Zap, MessageSquare, Play, ChevronLeft, ChevronRight, Image as ImageIcon, FileText } from 'lucide-react';
 import { useState } from 'react';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
@@ -13,6 +13,7 @@ import { getProductBySlug } from '@/data/products';
 import { getManufacturerById } from '@/data/manufacturers';
 import { getProductImage, getProductGallery } from '@/data/productImages';
 import { cn } from '@/lib/utils';
+import { generateProductBrochure } from '@/utils/generateProductBrochure';
 
 const availabilityConfig = {
   'available': { label: 'Available Now', className: 'bg-green-500/10 text-green-500 border-green-500/20' },
@@ -417,35 +418,57 @@ export default function ProductDetail() {
               <h2 className="text-2xl font-bold mb-6">Downloads & Resources</h2>
               {product.resourceLinks.length > 0 ? (
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {product.resourceLinks.map((resource, i) => (
-                    <a
-                      key={i}
-                      href={resource.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group p-6 rounded-xl bg-secondary/50 border border-border hover:border-primary/50 transition-colors"
-                    >
-                      <div className="flex items-start justify-between mb-4">
-                        <span className="text-2xl">{resourceTypeIcons[resource.type] || '📄'}</span>
-                        <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                      </div>
-                      <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors">
-                        {resource.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground capitalize">
-                        {resource.type} • Opens in new tab
-                      </p>
-                    </a>
-                  ))}
+                  {product.resourceLinks.map((resource, i) => {
+                    const isInternalBrochure = resource.url === 'internal:brochure';
+                    
+                    if (isInternalBrochure) {
+                      return (
+                        <button
+                          key={i}
+                          onClick={() => generateProductBrochure(product)}
+                          className="group p-6 rounded-xl bg-secondary/50 border border-border hover:border-primary/50 transition-colors text-left"
+                        >
+                          <div className="flex items-start justify-between mb-4">
+                            <span className="text-2xl">📄</span>
+                            <FileText className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                          </div>
+                          <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors">
+                            {resource.title}
+                          </h3>
+                          <p className="text-sm text-muted-foreground capitalize">
+                            {resource.type} • Download PDF
+                          </p>
+                        </button>
+                      );
+                    }
+                    
+                    return (
+                      <a
+                        key={i}
+                        href={resource.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group p-6 rounded-xl bg-secondary/50 border border-border hover:border-primary/50 transition-colors"
+                      >
+                        <div className="flex items-start justify-between mb-4">
+                          <span className="text-2xl">{resourceTypeIcons[resource.type] || '📄'}</span>
+                          <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                        </div>
+                        <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors">
+                          {resource.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground capitalize">
+                          {resource.type} • Opens in new tab
+                        </p>
+                      </a>
+                    );
+                  })}
                 </div>
               ) : (
                 <p className="text-muted-foreground">
                   No downloads available yet. Contact us for documentation.
                 </p>
               )}
-              <p className="text-sm text-muted-foreground mt-6">
-                * All resources link to official manufacturer documentation on external websites.
-              </p>
             </TabsContent>
           </Tabs>
         </div>
