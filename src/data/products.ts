@@ -197,10 +197,8 @@ The G1 is designed to work with UnifoLM (Unified Robot Large Model), helping cre
     ],
     thumbnail: '/placeholder.svg',
     resourceLinks: [
-      { title: 'G1 Product Page', url: 'https://www.unitree.com/g1', type: 'datasheet' },
+      { title: 'G1 Product Brochure', url: 'internal:brochure', type: 'brochure' },
       { title: 'G1 Flexibility Demo', url: 'https://www.unitree.com/images/7504897529034b05890225e149d3af28.mp4', type: 'video' },
-      { title: 'SDK Documentation', url: 'https://www.unitree.com/g1', type: 'software' },
-      { title: 'Secondary Development Manual', url: 'https://www.unitree.com/g1', type: 'manual' },
     ],
     availability: 'available',
     featured: true,
