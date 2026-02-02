@@ -12,46 +12,6 @@ import { BlogSection } from '@/components/home/BlogSection';
 import heroHumanoid from '@/assets/hero-humanoid.jpg';
 import heroRobotDog from '@/assets/products/unitree-go2.png';
 
-const features = [
-  {
-    icon: Shield,
-    title: 'Official Unitree Partner',
-    description: 'Official Unitree distributor for Ireland with full warranty support.',
-  },
-  {
-    icon: Truck,
-    title: 'Irish Delivery',
-    description: 'Fast, insured delivery across Ireland & UK with white-glove service available.',
-  },
-  {
-    icon: Headphones,
-    title: 'Expert Support',
-    description: 'Local technical support team with robotics expertise and training.',
-  },
-  {
-    icon: Award,
-    title: 'Full Compliance',
-    description: 'All robots meet EU safety standards and Irish regulatory requirements.',
-  },
-];
-
-const categories = [
-  {
-    title: 'Humanoid Robots',
-    description: 'Advanced bipedal robots for research, industry, and service applications.',
-    image: heroHumanoid,
-    href: '/products?category=humanoid',
-    icon: Bot,
-  },
-  {
-    title: 'Robot Dogs',
-    description: 'Versatile quadruped robots for inspection, security, and entertainment.',
-    image: heroRobotDog,
-    href: '/products?category=robot-dog',
-    icon: Dog,
-  },
-];
-
 export default function Home() {
   const { t } = useTranslation();
   const featuredProducts = getFeaturedProducts().slice(0, 6);
