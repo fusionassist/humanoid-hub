@@ -1,7 +1,5 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
-import { Resend } from "https://esm.sh/resend@2.0.0";
-
-const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
+import { SMTPClient } from "https://deno.land/x/denomailer@1.6.0/mod.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -85,17 +83,34 @@ const handler = async (req: Request): Promise<Response> => {
       </p>
     `;
 
-    const emailResponse = await resend.emails.send({
-      from: "Fusion Humanoids <noreply@fusionhumanoids.com>",
-      to: ["sales@fusiontechnologies.ie"],
-      reply_to: formData.email,
+    // Create SMTP client for Microsoft 365
+    const client = new SMTPClient({
+      connection: {
+        hostname: "smtp.office365.com",
+        port: 587,
+        tls: true,
+        auth: {
+          username: Deno.env.get("SMTP_USER") || "",
+          password: Deno.env.get("SMTP_PASSWORD") || "",
+        },
+      },
+    });
+
+    // Send email via Microsoft 365 SMTP
+    await client.send({
+      from: Deno.env.get("SMTP_USER") || "",
+      to: "sales@fusiontechnologies.ie",
+      replyTo: formData.email,
       subject: subject,
+      content: "Please view this email in an HTML-capable email client.",
       html: htmlContent,
     });
 
-    console.log("Email sent successfully:", emailResponse);
+    await client.close();
 
-    return new Response(JSON.stringify({ success: true, data: emailResponse }), {
+    console.log("Email sent successfully via Microsoft 365 SMTP");
+
+    return new Response(JSON.stringify({ success: true }), {
       status: 200,
       headers: {
         "Content-Type": "application/json",
