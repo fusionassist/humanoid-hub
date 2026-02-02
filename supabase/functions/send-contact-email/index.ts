@@ -1,5 +1,4 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
-import { SMTPClient } from "https://deno.land/x/denomailer@1.6.0/mod.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -16,6 +15,98 @@ interface ContactFormData {
   product?: string;
   message: string;
   formType: "contact" | "quote";
+}
+
+// Get Microsoft Graph access token using client credentials flow
+async function getGraphAccessToken(): Promise<string> {
+  const tenantId = Deno.env.get("AZURE_TENANT_ID");
+  const clientId = Deno.env.get("AZURE_CLIENT_ID");
+  const clientSecret = Deno.env.get("AZURE_CLIENT_SECRET");
+
+  if (!tenantId || !clientId || !clientSecret) {
+    throw new Error("Missing Azure credentials");
+  }
+
+  const tokenUrl = `https://login.microsoftonline.com/${tenantId}/oauth2/v2.0/token`;
+
+  const response = await fetch(tokenUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: new URLSearchParams({
+      client_id: clientId,
+      client_secret: clientSecret,
+      scope: "https://graph.microsoft.com/.default",
+      grant_type: "client_credentials",
+    }),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    console.error("Token error:", errorText);
+    throw new Error(`Failed to get access token: ${response.status}`);
+  }
+
+  const data = await response.json();
+  return data.access_token;
+}
+
+// Send email via Microsoft Graph API
+async function sendEmailViaGraph(
+  accessToken: string,
+  from: string,
+  to: string,
+  subject: string,
+  htmlContent: string,
+  replyTo?: string
+): Promise<void> {
+  const sendMailUrl = `https://graph.microsoft.com/v1.0/users/${from}/sendMail`;
+
+  const emailPayload: any = {
+    message: {
+      subject: subject,
+      body: {
+        contentType: "HTML",
+        content: htmlContent,
+      },
+      toRecipients: [
+        {
+          emailAddress: {
+            address: to,
+          },
+        },
+      ],
+    },
+    saveToSentItems: true,
+  };
+
+  if (replyTo) {
+    emailPayload.message.replyTo = [
+      {
+        emailAddress: {
+          address: replyTo,
+        },
+      },
+    ];
+  }
+
+  const response = await fetch(sendMailUrl, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(emailPayload),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    console.error("Graph API error:", errorText);
+    throw new Error(`Failed to send email: ${response.status} - ${errorText}`);
+  }
+
+  console.log("Email sent successfully via Microsoft Graph");
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -83,34 +174,16 @@ const handler = async (req: Request): Promise<Response> => {
       </p>
     `;
 
-    const smtpUser = Deno.env.get("SMTP_USER") || "";
-    const smtpPassword = Deno.env.get("SMTP_PASSWORD") || "";
-
-    console.log("Attempting SMTP connection with user:", smtpUser);
-
-    const client = new SMTPClient({
-      connection: {
-        hostname: "smtp.office365.com",
-        port: 587,
-        tls: false,
-        auth: {
-          username: smtpUser,
-          password: smtpPassword,
-        },
-      },
-    });
-
-    await client.send({
-      from: smtpUser,
-      to: "sales@fusiontechnologies.ie",
-      replyTo: formData.email,
-      subject: subject,
-      content: "Please view this email in an HTML-capable email client.",
-      html: htmlContent,
-    });
-
-    await client.close();
-    console.log("Email sent successfully via Microsoft 365 SMTP");
+    // Get access token and send email via Graph API
+    const accessToken = await getGraphAccessToken();
+    await sendEmailViaGraph(
+      accessToken,
+      "web1@fusiontechnologies.ie", // FROM address (must be a valid mailbox)
+      "sales@fusiontechnologies.ie", // TO address
+      subject,
+      htmlContent,
+      formData.email // Reply-To
+    );
 
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
