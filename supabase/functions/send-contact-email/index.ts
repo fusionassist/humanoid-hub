@@ -83,22 +83,28 @@ const handler = async (req: Request): Promise<Response> => {
       </p>
     `;
 
+    const smtpUser = Deno.env.get("SMTP_USER") || "";
+    const smtpPassword = Deno.env.get("SMTP_PASSWORD") || "";
+
+    console.log("Attempting to connect to SMTP server with user:", smtpUser);
+
     // Create SMTP client for Microsoft 365
+    // Port 587 with STARTTLS - denomailer handles the upgrade automatically
     const client = new SMTPClient({
       connection: {
         hostname: "smtp.office365.com",
         port: 587,
-        tls: true,
+        tls: false, // Start plain, STARTTLS will be used automatically
         auth: {
-          username: Deno.env.get("SMTP_USER") || "",
-          password: Deno.env.get("SMTP_PASSWORD") || "",
+          username: smtpUser,
+          password: smtpPassword,
         },
       },
     });
 
     // Send email via Microsoft 365 SMTP
     await client.send({
-      from: Deno.env.get("SMTP_USER") || "",
+      from: smtpUser,
       to: "sales@fusiontechnologies.ie",
       replyTo: formData.email,
       subject: subject,
