@@ -65,6 +65,27 @@ export function generateProductBrochure(product: Product): void {
     </section>
   ` : '';
 
+  // Get video URLs from product media
+  const videoUrls = product.media.filter(url => url.endsWith('.mp4'));
+  
+  const videoHTML = videoUrls.length > 0 ? `
+    <section class="videos">
+      <h2>Product Videos</h2>
+      <div class="video-container">
+        ${videoUrls.map((url, index) => `
+          <div class="video-item">
+            <video controls preload="metadata" poster="">
+              <source src="${url}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="video-caption">Demo Video ${index + 1}</p>
+          </div>
+        `).join('')}
+      </div>
+      <p class="video-note">Videos are best viewed in the digital version of this brochure.</p>
+    </section>
+  ` : '';
+
   const html = `
     <!DOCTYPE html>
     <html>
@@ -208,6 +229,52 @@ export function generateProductBrochure(product: Product): void {
           width: 100%;
           height: 150px;
           object-fit: cover;
+        }
+        
+        /* Videos */
+        .videos {
+          margin-bottom: 50px;
+          page-break-inside: avoid;
+        }
+        
+        .videos h2 {
+          font-size: 28px;
+          margin-bottom: 25px;
+          color: #1a1a1a;
+        }
+        
+        .video-container {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+        
+        .video-item {
+          border-radius: 12px;
+          overflow: hidden;
+          background: #f8f9ff;
+          border: 1px solid #e0e7ff;
+        }
+        
+        .video-item video {
+          width: 100%;
+          max-height: 400px;
+          display: block;
+        }
+        
+        .video-caption {
+          padding: 12px 16px;
+          font-size: 14px;
+          font-weight: 500;
+          color: #333;
+          border-top: 1px solid #e0e7ff;
+        }
+        
+        .video-note {
+          margin-top: 15px;
+          font-size: 12px;
+          color: #888;
+          font-style: italic;
         }
         
         /* Description */
@@ -453,6 +520,8 @@ export function generateProductBrochure(product: Product): void {
         </div>
         
         ${galleryHTML}
+        
+        ${videoHTML}
         
         <section class="description">
           <h2>Overview</h2>
