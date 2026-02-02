@@ -21,6 +21,7 @@ export default function Home() {
       icon: Shield,
       title: t('whyChooseUs.partner.title'),
       description: t('whyChooseUs.partner.description'),
+      tradeNote: t('whyChooseUs.partner.tradeNote'),
     },
     {
       icon: Truck,
@@ -233,6 +234,9 @@ export default function Home() {
                 </div>
                 <h3 className="text-lg font-semibold mb-3">{feature.title}</h3>
                 <p className="text-sm text-muted-foreground">{feature.description}</p>
+                {feature.tradeNote && (
+                  <p className="text-xs text-primary mt-2 font-medium">{feature.tradeNote}</p>
+                )}
               </motion.div>
             ))}
           </div>

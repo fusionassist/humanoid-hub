@@ -45,7 +45,8 @@
     "description": "As Ireland & UK's dedicated robotics partner, we provide end-to-end support from consultation to deployment.",
     "partner": {
       "title": "Official Unitree Partner",
-      "description": "Official Unitree distributor for Ireland with full warranty support."
+      "description": "Official Unitree Partner for Ireland & UK with full warranty support.",
+      "tradeNote": "Trade-only distribution available on all products."
     },
     "delivery": {
       "title": "Irish Delivery",

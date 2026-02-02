@@ -45,7 +45,8 @@
     "description": "En tant que partenaire robotique dédié de l'Irlande & du Royaume-Uni, nous fournissons un support de bout en bout, de la consultation au déploiement.",
     "partner": {
       "title": "Partenaire officiel Unitree",
-      "description": "Distributeur officiel Unitree pour l'Irlande avec support de garantie complet."
+      "description": "Partenaire officiel Unitree pour l'Irlande & le Royaume-Uni avec support de garantie complet.",
+      "tradeNote": "Distribution commerciale disponible sur tous les produits."
     },
     "delivery": {
       "title": "Livraison irlandaise",
