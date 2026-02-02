@@ -553,6 +553,7 @@ export function generateProductBrochure(product: Product): void {
           <div class="footer-logo">Fusion<span>Humanoids</span></div>
           <p class="footer-info">Ireland & UK's Premier Robotics Partner</p>
           <p class="footer-info">Official ${manufacturer?.name || ''} Distributor</p>
+          <p class="footer-info" style="margin-top: 10px;">Part of <a href="https://fusiontechnologies.ie/" target="_blank" style="color: #0066ff;">Fusion Technologies</a></p>
           <p class="footer-contact">sales@fusionhumanoids.com | +353 44 936 2018</p>
           <p class="footer-info" style="margin-top: 10px;">Dromone, Oldcastle, Co Meath A82E0W4, Ireland</p>
           <p class="disclaimer">
