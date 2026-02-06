@@ -194,6 +194,7 @@ The G1 is designed to work with UnifoLM (Unified Robot Large Model), helping cre
     gallery: [], // Gallery loaded from productImages.ts
     media: [
       'https://www.unitree.com/images/7504897529034b05890225e149d3af28.mp4',
+      '/videos/Sam_Digit_Fusion_Technologies.mp4',
     ],
     thumbnail: '/placeholder.svg',
     resourceLinks: [
