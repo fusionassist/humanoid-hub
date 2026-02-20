@@ -64,10 +64,173 @@
       }
     }
     </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Unitree Robot Products",
+      "description": "Full range of Unitree robots available from Fusion Humanoids in Ireland and the UK",
+      "url": "https://fusionhumanoids.com/products",
+      "numberOfItems": 9,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Product",
+            "name": "Unitree H1",
+            "description": "Universal humanoid robot standing 1.8m tall with 19 degrees of freedom, capable of walking at 3.3 m/s. Ideal for research, industrial automation and service applications.",
+            "url": "https://fusionhumanoids.com/products/unitree-h1",
+            "brand": {"@type": "Brand", "name": "Unitree"},
+            "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "EUR", "seller": {"@type": "Organization", "name": "Fusion Humanoids"}}
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Product",
+            "name": "Unitree H2",
+            "description": "Next-generation humanoid robot with advanced dexterous hands and enhanced payload capacity for industrial tasks.",
+            "url": "https://fusionhumanoids.com/products/unitree-h2",
+            "brand": {"@type": "Brand", "name": "Unitree"},
+            "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "EUR", "seller": {"@type": "Organization", "name": "Fusion Humanoids"}}
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Product",
+            "name": "Unitree G1",
+            "description": "The most affordable humanoid robot on the market. Compact, agile humanoid ideal for research and education. Features advanced AI capabilities.",
+            "url": "https://fusionhumanoids.com/products/unitree-g1",
+            "brand": {"@type": "Brand", "name": "Unitree"},
+            "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "EUR", "seller": {"@type": "Organization", "name": "Fusion Humanoids"}}
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Product",
+            "name": "Unitree Go2",
+            "description": "Intelligent quadruped robot dog with advanced terrain adaptability. Perfect for inspection, research and education.",
+            "url": "https://fusionhumanoids.com/products/unitree-go2",
+            "brand": {"@type": "Brand", "name": "Unitree"},
+            "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "EUR", "seller": {"@type": "Organization", "name": "Fusion Humanoids"}}
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Product",
+            "name": "Unitree B2",
+            "description": "Industrial-grade quadruped robot dog built for heavy-duty tasks, carrying a 40kg payload and operating in harsh environments.",
+            "url": "https://fusionhumanoids.com/products/unitree-b2",
+            "brand": {"@type": "Brand", "name": "Unitree"},
+            "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "EUR", "seller": {"@type": "Organization", "name": "Fusion Humanoids"}}
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Static content for bots/crawlers that do not execute JavaScript -->
+      <header>
+        <nav aria-label="Main navigation">
+          <a href="/" aria-label="Fusion Humanoids Home">Fusion Humanoids</a>
+          <ul>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/downloads">Downloads</a></li>
+            <li><a href="/support">Support</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <section aria-labelledby="hero-heading">
+          <h1 id="hero-heading">Official Unitree Robot Distributor for Ireland &amp; the UK</h1>
+          <p>Fusion Humanoids is the authorised distributor of Unitree robots in Ireland and the United Kingdom. We supply humanoid robots and robot dogs for research, education, and industrial applications — with expert local support and fast delivery.</p>
+          <a href="/products">View All Robots</a>
+          <a href="/contact">Request a Quote</a>
+        </section>
+
+        <section aria-labelledby="products-heading">
+          <h2 id="products-heading">Our Robots</h2>
+
+          <article>
+            <h3><a href="/products/unitree-h1">Unitree H1 Humanoid Robot</a></h3>
+            <p>The Unitree H1 is a universal humanoid robot standing 1.8m tall with 19 degrees of freedom, capable of walking at up to 3.3 m/s. Ideal for research, industrial automation, and service robotics in Ireland and the UK.</p>
+          </article>
+
+          <article>
+            <h3><a href="/products/unitree-h2">Unitree H2 Humanoid Robot</a></h3>
+            <p>The Unitree H2 is the next-generation humanoid robot featuring advanced dexterous hands and a 40kg payload capacity. Designed for demanding industrial tasks and advanced research.</p>
+          </article>
+
+          <article>
+            <h3><a href="/products/unitree-g1">Unitree G1 Humanoid Robot</a></h3>
+            <p>The Unitree G1 is the most affordable humanoid robot available, featuring 43 degrees of freedom and dexterous hands. Perfect for AI research, universities and technology companies.</p>
+          </article>
+
+          <article>
+            <h3><a href="/products/unitree-go2">Unitree Go2 Robot Dog</a></h3>
+            <p>The Unitree Go2 is an intelligent quadruped robot dog with advanced terrain adaptability and 4D LIDAR. Ideal for inspection, research, and education applications.</p>
+          </article>
+
+          <article>
+            <h3><a href="/products/unitree-b2">Unitree B2 Robot Dog</a></h3>
+            <p>The Unitree B2 is an industrial-grade quadruped robot built for heavy-duty tasks, with a 40kg payload and designed to operate in harsh outdoor environments.</p>
+          </article>
+
+          <article>
+            <h3><a href="/products/unitree-b2w">Unitree B2-W Wheeled Robot</a></h3>
+            <p>The Unitree B2-W combines legged and wheeled locomotion for versatile industrial use, capable of navigating varied terrain at speed.</p>
+          </article>
+
+          <article>
+            <h3><a href="/products/unitree-r1">Unitree R1 Humanoid Robot</a></h3>
+            <p>The Unitree R1 is a wheeled humanoid robot designed for service applications, featuring expressive interaction and strong payload capabilities.</p>
+          </article>
+        </section>
+
+        <section aria-labelledby="about-heading">
+          <h2 id="about-heading">About Fusion Humanoids</h2>
+          <p>Fusion Humanoids is the official Unitree robot distributor for Ireland and the United Kingdom. Based in Co. Meath, Ireland, we provide sales, technical support, integration services, and training for the full Unitree robot range. Our team works with universities, research institutes, and industry to bring advanced robotics to Ireland and the UK.</p>
+          <p>Contact us: <a href="mailto:sales@fusionhumanoids.com">sales@fusionhumanoids.com</a> | <a href="tel:+353449672855">+353 44 967 2855</a></p>
+          <address>Dromone, Oldcastle, Co. Meath, A82E0W4, Ireland</address>
+        </section>
+
+        <section aria-labelledby="blog-heading">
+          <h2 id="blog-heading">Latest News &amp; Insights</h2>
+          <ul>
+            <li><a href="/blog/rise-of-humanoid-robots-in-ireland">The Rise of Humanoid Robots in Ireland: What Businesses Need to Know</a></li>
+            <li><a href="/blog/unitree-g1-deep-dive">Unitree G1: A Deep Dive into the Most Affordable Humanoid Robot</a></li>
+            <li><a href="/blog/robot-dogs-industrial-inspection">How Robot Dogs Are Transforming Industrial Inspection</a></li>
+            <li><a href="/blog/future-of-robotics-2025">Robotics Trends to Watch in 2025</a></li>
+          </ul>
+        </section>
+      </main>
+
+      <footer>
+        <p>&copy; 2025 Fusion Humanoids. All rights reserved.</p>
+        <nav aria-label="Footer navigation">
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+          <a href="/cookies">Cookie Policy</a>
+          <a href="/contact">Contact</a>
+        </nav>
+      </footer>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
