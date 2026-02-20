@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Mail, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -7,20 +6,17 @@ import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
 
 const NEWSLETTER_DISMISSED_KEY = 'newsletter_popup_dismissed';
-const POPUP_DELAY = 2000; // 2 seconds delay before showing
+const POPUP_DELAY = 8000; // 8 seconds delay before showing
 
 export function NewsletterPopup() {
-  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
-    // Check if user has already dismissed or subscribed
     const dismissed = localStorage.getItem(NEWSLETTER_DISMISSED_KEY);
     if (dismissed) return;
 
-    // Show popup after delay
     const timer = setTimeout(() => {
       setIsOpen(true);
     }, POPUP_DELAY);
@@ -42,11 +38,9 @@ export function NewsletterPopup() {
     }
 
     setIsSubmitting(true);
-    
-    // Simulate API call - in production, this would connect to your email service
     await new Promise(resolve => setTimeout(resolve, 1000));
     
-    toast.success('Thank you for subscribing! You\'ll receive the latest robotics news and updates.');
+    toast.success("Thank you for subscribing! You'll receive the latest robotics news and updates.");
     setIsSubmitting(false);
     setIsOpen(false);
     localStorage.setItem(NEWSLETTER_DISMISSED_KEY, 'subscribed');
@@ -55,91 +49,72 @@ export function NewsletterPopup() {
   return (
     <AnimatePresence>
       {isOpen && (
-        <>
-          {/* Backdrop */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={handleClose}
-            className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50"
-          />
-          
-          {/* Popup */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4"
-          >
-            <div className="relative w-full max-w-lg bg-card border border-border rounded-2xl shadow-2xl overflow-hidden">
-              {/* Decorative gradient */}
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary" />
-              
-              {/* Close button */}
-              <button
-                onClick={handleClose}
-                className="absolute top-4 right-4 p-2 rounded-full bg-secondary/50 hover:bg-secondary text-muted-foreground hover:text-foreground transition-colors"
-                aria-label="Close newsletter popup"
-              >
-                <X className="w-5 h-5" />
-              </button>
+        <motion.div
+          initial={{ opacity: 0, y: 80, x: 0 }}
+          animate={{ opacity: 1, y: 0, x: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+          className="fixed bottom-6 right-6 z-50 w-full max-w-sm"
+        >
+          <div className="relative bg-card border border-border rounded-2xl shadow-2xl overflow-hidden">
+            {/* Decorative gradient top bar */}
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary" />
 
-              <div className="p-8 pt-10">
-                {/* Icon */}
-                <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-primary/10 flex items-center justify-center">
-                  <Mail className="w-8 h-8 text-primary" />
+            {/* Close button */}
+            <button
+              onClick={handleClose}
+              className="absolute top-3 right-3 p-1.5 rounded-full bg-secondary/50 hover:bg-secondary text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Close newsletter popup"
+            >
+              <X className="w-4 h-4" />
+            </button>
+
+            <div className="p-6 pt-7">
+              {/* Header */}
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <Mail className="w-5 h-5 text-primary" />
                 </div>
-
-                {/* Content */}
-                <div className="text-center mb-8">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-4">
+                <div>
+                  <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-medium mb-1">
                     <Zap className="w-3 h-3" />
                     Stay Updated
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold mb-3">
-                    Join the Robotics Revolution
-                  </h2>
-                  <p className="text-muted-foreground">
-                    Subscribe to our newsletter for the latest updates on humanoid robots, 
-                    exclusive offers, and industry insights.
-                  </p>
+                  <h2 className="text-base font-bold leading-tight">Join the Robotics Revolution</h2>
                 </div>
-
-                {/* Form */}
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="relative">
-                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                    <Input
-                      type="email"
-                      placeholder="Enter your email address"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="pl-12 h-12 bg-secondary/50 border-border focus:border-primary"
-                    />
-                  </div>
-                  <Button 
-                    type="submit" 
-                    variant="hero" 
-                    size="lg" 
-                    className="w-full"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? 'Subscribing...' : 'Subscribe Now'}
-                  </Button>
-                </form>
-
-                {/* Privacy note */}
-                <p className="text-xs text-muted-foreground text-center mt-4">
-                  By subscribing, you agree to our{' '}
-                  <a href="/privacy" className="text-primary hover:underline">Privacy Policy</a>
-                  . Unsubscribe at any time.
-                </p>
               </div>
+
+              <p className="text-sm text-muted-foreground mb-4">
+                Get the latest updates on humanoid robots and exclusive offers.
+              </p>
+
+              {/* Form */}
+              <form onSubmit={handleSubmit} className="space-y-3">
+                <Input
+                  type="email"
+                  placeholder="Enter your email address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="h-10 bg-secondary/50 border-border focus:border-primary text-sm"
+                />
+                <Button
+                  type="submit"
+                  variant="hero"
+                  size="sm"
+                  className="w-full"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Subscribing...' : 'Subscribe Now'}
+                </Button>
+              </form>
+
+              <p className="text-xs text-muted-foreground text-center mt-3">
+                By subscribing, you agree to our{' '}
+                <a href="/privacy" className="text-primary hover:underline">Privacy Policy</a>.
+              </p>
             </div>
-          </motion.div>
-        </>
+          </div>
+        </motion.div>
       )}
     </AnimatePresence>
   );
