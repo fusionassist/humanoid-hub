@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { ProductCard } from '@/components/products/ProductCard';
 import { SEO, organizationSchema } from '@/components/SEO';
 import { getFeaturedProducts } from '@/data/products';
-import { NewsletterPopup } from '@/components/NewsletterPopup';
+
 import { BlogSection } from '@/components/home/BlogSection';
 import heroHumanoid from '@/assets/hero-humanoid.jpg';
 import heroRobotDog from '@/assets/products/unitree-go2.png';
@@ -63,7 +63,6 @@ export default function Home() {
         canonical="/"
         jsonLd={organizationSchema}
       />
-      <NewsletterPopup />
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         {/* Background */}
