@@ -1,0 +1,29 @@
+# Fusion Humanoids
+
+> Official distributor of Unitree robots in Ireland and the UK.
+
+Fusion Humanoids is the official Unitree robotics distributor for Ireland and the United Kingdom. We sell humanoid robots and robot dogs for research, education, and industrial applications.
+
+## Products
+
+- **Unitree G1** – Advanced humanoid robot for research and industry
+- **Unitree H1** – High-performance humanoid robot
+- **Unitree H2** – Next-generation humanoid robot
+- **Unitree Go2** – Agile quadruped robot dog for outdoor and research use
+- **Unitree B2** – Heavy-duty industrial quadruped robot
+
+## About
+
+- Based in Co. Meath, Ireland
+- Serving Ireland and the UK
+- Expert consultation, technical support, and after-sales service
+- Contact: sales@fusionhumanoids.com | +353-44-967-2855
+
+## Links
+
+- Homepage: https://fusionhumanoids.com
+- Products: https://fusionhumanoids.com/products
+- About: https://fusionhumanoids.com/about
+- Contact: https://fusionhumanoids.com/contact
+- Blog: https://fusionhumanoids.com/blog
+- Sitemap: https://fusionhumanoids.com/sitemap.xml
