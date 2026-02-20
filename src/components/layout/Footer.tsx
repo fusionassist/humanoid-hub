@@ -1,5 +1,12 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Linkedin, Twitter, Youtube } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Twitter, Youtube, Zap } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { toast } from 'sonner';
+import { z } from 'zod';
+
+const emailSchema = z.string().trim().email({ message: 'Please enter a valid email address' }).max(255);
 
 const footerLinks = {
   products: [
@@ -24,9 +31,56 @@ const footerLinks = {
 };
 
 export function Footer() {
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const result = emailSchema.safeParse(email);
+    if (!result.success) {
+      toast.error(result.error.errors[0].message);
+      return;
+    }
+    setIsSubmitting(true);
+    await new Promise(resolve => setTimeout(resolve, 800));
+    toast.success("You're subscribed! We'll keep you updated on the latest robotics news.");
+    setEmail('');
+    setIsSubmitting(false);
+  };
+
   return (
     <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Newsletter Strip */}
+        <div className="mb-14 rounded-2xl bg-primary/5 border border-primary/20 p-8 flex flex-col md:flex-row items-center gap-6 justify-between">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+              <Mail className="w-6 h-6 text-primary" />
+            </div>
+            <div>
+              <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-medium mb-1">
+                <Zap className="w-3 h-3" />
+                Stay Updated
+              </div>
+              <h3 className="font-bold text-lg">Join the Robotics Revolution</h3>
+              <p className="text-sm text-muted-foreground">Get the latest news, product launches and exclusive offers.</p>
+            </div>
+          </div>
+          <form onSubmit={handleNewsletterSubmit} className="flex gap-2 w-full md:w-auto">
+            <Input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="h-10 bg-secondary/50 border-border focus:border-primary text-sm min-w-[220px]"
+              maxLength={255}
+            />
+            <Button type="submit" variant="hero" size="sm" disabled={isSubmitting} className="shrink-0">
+              {isSubmitting ? 'Subscribing…' : 'Subscribe'}
+            </Button>
+          </form>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
